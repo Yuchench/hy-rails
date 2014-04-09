@@ -46,5 +46,9 @@ gem 'unicorn'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
+
+# upload s3
+gem 'paperclip'
+gem 'aws-sdk'
 # Use debugger
 # gem 'debugger', group: [:development, :test]

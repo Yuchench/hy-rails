@@ -10,6 +10,7 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -20,6 +21,7 @@
         <td><%= firework.name %></td>
         <td><%= firework.product_type %></td>
         <td><%= firework.content %></td>
+        <td><%= image_tag firework.image.url(:square) %></td>
         <td><%= link_to 'Show', firework %></td>
         <td><%= link_to 'Edit', edit_firework_path(firework) %></td>
         <td><%= link_to 'Destroy', firework, method: :delete, data: { confirm: 'Are you sure?' } %></td>
