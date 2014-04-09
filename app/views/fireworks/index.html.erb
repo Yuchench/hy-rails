@@ -1,0 +1,33 @@
+<h3>宏益舞台特效公司(管理界面)</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>產品編號</th>
+      <th>產品名稱</th>
+      <th>產品類型</th>
+      <th>產品內容</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fireworks.each do |firework| %>
+      <tr>
+        <td><%= firework.name_id %></td>
+        <td><%= firework.name %></td>
+        <td><%= firework.product_type %></td>
+        <td><%= firework.content %></td>
+        <td><%= link_to 'Show', firework %></td>
+        <td><%= link_to 'Edit', edit_firework_path(firework) %></td>
+        <td><%= link_to 'Destroy', firework, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= button_to 'New Firework', new_firework_path ,:class => 'btn btn-primary' %>

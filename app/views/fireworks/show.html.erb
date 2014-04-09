@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @firework.name_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @firework.name %>
+</p>
+
+<p>
+  <strong>Product type:</strong>
+  <%= @firework.product_type %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @firework.content %>
+</p>
+
+<%= link_to 'Edit', edit_firework_path(@firework) %> |
+<%= link_to 'Back', fireworks_path %>
