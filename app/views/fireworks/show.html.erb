@@ -19,6 +19,9 @@
   <strong>Content:</strong>
   <%= @firework.content %>
 </p>
+<p>
+	<%= image_tag @firework.image.url(:medium) %>
+</p>
 
 <%= link_to 'Edit', edit_firework_path(@firework) %> |
 <%= link_to 'Back', fireworks_path %>

@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :product_type %><br>
-    <%= f.text_field :product_type %>
+    <%= f.select :product_type, options_for_select([["請選擇種類", ""], ["煙火特效類"], "鋼瓶發射性特效", "煙霧類特效", "道具類特效", "機械式特效","特殊效果","煙火類"]) %>
   </div>
   <div class="field">
     <%= f.label :content %><br>
