@@ -1,16 +1,17 @@
 class FireworksController < ApplicationController
+  http_basic_authenticate_with :name => "test", :password => "test", :except => [:index, :show]
   before_action :set_firework, only: [:show, :edit, :update, :destroy]
-
-  # scope :all_type_firework_effect, -> { where(:product_type => '煙火特效類') }
-  # scope :all_type_project, -> { where(:product_type => '鋼瓶發射性特效') }
-  # scope :all_type_smoke, -> { where(:product_type => '煙霧類特效') }
-  # scope :all_type_gadge, -> { where(:product_type => '道具類特效') }
-  # scope :all_type_mech, -> { where(:product_type => '機械式特效') }
-  # scope :all_type_special, -> { where(:product_type => '特殊效果') }
-  # scope :all_type_firework, -> { where(:product_type => '煙火類') }
-  # GET /fireworks
-  # GET /fireworks.json
   def index
+    @page_title = "產品列表"
+    @product_type = params[:product_type]
+    if @product_type
+      @fireworks = Firework.all_type(@product_type)
+    else
+      @fireworks = Firework.search(params[:search])
+    end
+  end
+
+  def home
     @page_title = "產品列表"
     @product_type = params[:product_type]
     if @product_type
@@ -19,7 +20,6 @@ class FireworksController < ApplicationController
       @fireworks = Firework.all
     end
   end
-
   # GET /fireworks/1
   # GET /fireworks/1.json
   def show
@@ -82,6 +82,6 @@ class FireworksController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def firework_params
-    params.require(:firework).permit(:name_id, :name, :product_type, :content,:image)
+    params.require(:firework).permit(:name_id, :name, :product_type, :content,:image,:youtube_url)
   end
 end

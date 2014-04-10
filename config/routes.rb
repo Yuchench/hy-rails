@@ -1,10 +1,15 @@
 Myapp::Application.routes.draw do
-  resources :fireworks  do
-    collection do
-         get 'type/:product_type', :action => 'index'
+  scope '/admin' do
+    resources :fireworks  do
+      collection do
+        get 'type/:product_type', :action => 'index'
+      end
     end
   end
-  root 'welcome#index'
+
+  #resources :fireworks
+
+  root 'fireworks#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

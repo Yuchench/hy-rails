@@ -1,27 +1,33 @@
-<p id="notice"><%= notice %></p>
+<h3>宏益舞台特效公司(管理界面)</h3>
 
-<p>
-  <strong>Name:</strong>
-  <%= @firework.name_id %>
-</p>
+<div class="panel panel-default">
+	<div class="panel-heading">產品編號:<%= @firework.name_id %>		
+	<%= link_to '編輯', edit_firework_path(@firework) %> |
+		<%= link_to '返回', fireworks_path %></div>
+	
+	<div class="panel-body">
+		<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @firework.name %>
-</p>
 
-<p>
-  <strong>Product type:</strong>
-  <%= @firework.product_type %>
-</p>
+		<p>
+			<strong>產品名稱:</strong>
+			<%= @firework.name %>
+		</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @firework.content %>
-</p>
-<p>
-	<%= image_tag @firework.image.url(:medium) %>
-</p>
+		<p>
+			<strong>產品類型:</strong>
+			<%= product_type_chinese @firework.product_type %>
+		</p>
 
-<%= link_to 'Edit', edit_firework_path(@firework) %> |
-<%= link_to 'Back', fireworks_path %>
+		<p>
+			<strong>產品詳細內容:</strong>
+			<%= @firework.content %>
+		</p>
+		<p>
+			<%= youtube_embed ( @firework.youtube_url )  if @firework.youtube_url? %>
+		</p>
+		<p>
+			<%= image_tag @firework.image.url(:medium) %>
+		</p>
+	</div>
+</div>
