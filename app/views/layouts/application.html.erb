@@ -1,14 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%= render_page_title %> 
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+	<%= render_page_title %> 
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/webflow.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/hyy.webflow.css">
+	<%= csrf_meta_tags %>
+	<script type="text/javascript" src="js/modernizr.js"></script>
+
 </head>
 <body>
-<div class="container">
-<%= yield %>
-</div>
+	<div class="w-row">
+		<!-- LEFT -->
+		<div class="w-col w-col-4 left-sidebar">
+			<div class="fixed-nav">
+							<a href="/"><img class="logo" src="/images/logo.png" width="590"></a>
+					<%=products_navs%>
+				<div class="contact-us">
+					<button type="button" class="btn btn-default">台北總公司 Taipei</button>
+
+					<p>
+						地址：台北市內湖區新湖二路164號<br>
+						電話：(02)2790-7765<br>
+						傳真：(02)2790-7435<br>
+
+					</p>
+
+					<button type="button" class="btn btn-default">屏東分公司 Pingtung</button>
+
+					<p>
+						地址：屏東縣九如鄉耆老村耆老路30號<br>
+						電話：(08)7752-261<br>
+						傳真：(08)7753-203<br>
+						行動電話：0927-696-025 陳先生<br>
+
+					</p>
+
+
+
+				</div>
+
+
+
+
+
+
+
+				<a class="w-inline-block social-icon" href="mailto:hongyii@ms18.hinet.net">
+					<img src="images/8a-social-email.png" width="21px" alt="51e1b24abceaf5b67b000053_8a-social-email.png">
+				</a>
+				<a class="w-inline-block social-icon" href="#">
+					<img src="images/8b-social-facebook.png" width="21px" alt="51e1b2893bc6b24571000016_8b-social-facebook.png">
+				</a>
+				<div class="italic-text">&copy;2014 Hong-Yi Tech Co., LTD. All rights reserved.</div>
+			</div>
+		</div>
+		<div class="w-col w-col-8 content-column">
+			<%= yield %>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/webflow.js"></script>
 </body>
 </html>

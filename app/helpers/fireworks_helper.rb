@@ -25,15 +25,14 @@ module FireworksHelper
   end
 
   def products_navs
-    render_list :class => "nav nav-tabs" do |li|
-    	li << link_to('ALL', fireworks_path)
-      li << link_to(product_type_chinese('effect'), product_type_path('effect'))
-      li << link_to(product_type_chinese('project'), product_type_path('project') )
-      li << link_to(product_type_chinese('smoke'), product_type_path('smoke') )
-      li << link_to(product_type_chinese('gadge'), product_type_path('gadge'))
-      li << link_to(product_type_chinese('mech'), product_type_path('mech'))
-      li << link_to(product_type_chinese('special'), product_type_path('special'))
-      li << link_to(product_type_chinese('firework'), product_type_path('firework'))
+    render_list do |li|
+      li << link_to(product_type_chinese('effect'), product_type_path('effect'),:class=>'nav-link')
+      li << link_to(product_type_chinese('project'), product_type_path('project'),:class=>'nav-link')
+      li << link_to(product_type_chinese('smoke'), product_type_path('smoke'),:class=>'nav-link' )
+      li << link_to(product_type_chinese('gadge'), product_type_path('gadge'),:class=>'nav-link')
+      li << link_to(product_type_chinese('mech'), product_type_path('mech'),:class=>'nav-link')
+      li << link_to(product_type_chinese('special'), product_type_path('special'),:class=>'nav-link')
+      li << link_to(product_type_chinese('firework'), product_type_path('firework'),:class=>'nav-link')
     end
     # content_tag(:ul,:class => 'nav nav-tabs') do
     # 	s = ""
