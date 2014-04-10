@@ -1,5 +1,5 @@
 class FireworksController < ApplicationController
-  http_basic_authenticate_with :name => "test", :password => "test", :except => [:index, :show]
+  http_basic_authenticate_with :name => "test", :password => "test", :except => [:home,:index, :show]
   before_action :set_firework, only: [:show, :edit, :update, :destroy]
   def index
     @page_title = "產品列表"
