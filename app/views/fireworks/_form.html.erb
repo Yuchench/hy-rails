@@ -1,37 +1,8 @@
-<%= form_for(@firework) do |f| %>
-  <% if @firework.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@firework.errors.count, "error") %> prohibited this firework from being saved:</h2>
-
-      <ul>
-      <% @firework.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name_id %><br>
-    <%= f.text_field :name_id %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :product_type %><br>
-    <%= f.select :product_type, options_for_select([["請選擇種類", ""], ["煙火特效類"], "鋼瓶發射性特效", "煙霧類特效", "道具類特效", "機械式特效","特殊效果","煙火類"]) %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= bootstrap_form_for(@firework, layout: :horizontal) do |f| %>
+  <%= f.text_field :name_id , :label =>'產品編號' %>
+  <%= f.text_field :name , :label =>'產品名稱' %>
+   <%= f.select :product_type, options_for_select([["請選擇種類", ""], ["煙火特效類","effect"], ["鋼瓶發射性特效","project"], ["煙霧類特效","smoke"],["道具類特效","gadge"],["機械式特效","mech"],["特殊效果","special"],["煙火類","firework"]]) %>
+       <%= f.text_area :content, :label => '產品詳細內容' %>
+    <%= f.file_field :image, :label => '產品圖片' %>
+  <%= f.primary "新增" %>
 <% end %>

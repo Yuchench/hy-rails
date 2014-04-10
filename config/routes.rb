@@ -1,6 +1,8 @@
 Myapp::Application.routes.draw do
-  scope '/admin' do
-    resources :fireworks
+  resources :fireworks  do
+    collection do
+         get 'type/:product_type', :action => 'index'
+    end
   end
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
@@ -43,7 +45,7 @@ Myapp::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

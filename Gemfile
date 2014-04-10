@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -29,9 +29,9 @@ gem 'jbuilder', '~> 1.2'
 
 # bootstrap
 gem 'bootstrap-sass', '~> 3.1.1'
-
+gem 'bootstrap_helper'
 gem 'rails_12factor', group: :production
-
+gem 'bootstrap_form'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
