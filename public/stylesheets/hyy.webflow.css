@@ -92,7 +92,7 @@ div {
   background-color: black;
 }
 .content-column {
-  padding-top: 50px;
+  padding-top: 0px;
   padding-right: 0px;
   padding-left: 0px;
   border-left: 1px solid #333;
