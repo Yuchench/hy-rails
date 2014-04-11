@@ -24,7 +24,19 @@ class FireworksController < ApplicationController
   def show
   end
 
+    def create
+    @firework = Firework.new(firework_params)
 
+    respond_to do |format|
+      if @firework.save
+        format.html { redirect_to @firework, notice: 'Firework was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @firework }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @firework.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # PATCH/PUT /fireworks/1
   # PATCH/PUT /fireworks/1.json

@@ -1,7 +1,7 @@
 class Firework < ActiveRecord::Base
   scope :all_type, ->(type) { where("product_type = ?", type) }
   has_attached_file :image, styles: {
-    thumb: '100x100>',
+    thumb: '100x100#',
     square: '200x200#',
     medium: '600x600>'
   }

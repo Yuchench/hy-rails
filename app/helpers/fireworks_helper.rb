@@ -1,25 +1,28 @@
+# # ["舞台煙火","stage"],
+#  ["升空煙火","air"],
+#   ["特殊煙火","special"],
+#   ["鋼瓶發射類","project"],
+#   ["道具類","gadge"],
+#   ["機械式","mech"]]) %>
 module FireworksHelper
   def product_type_chinese(type)
     case type
-    when 'effect'
-      '煙火特效類'
-    when 'project'
-      '鋼瓶發射性特效'
-    when 'smoke'
-      '煙霧類特效'
-    when 'gadge'
-      '道具類特效'
-    when 'mech'
-      '機械式特效'
+    when 'stage'
+      '舞台煙火'
+    when 'air'
+      '升空煙火'
     when 'special'
-      '特殊效果'
-    when 'firework'
-      '煙火類'
+      '特殊煙火'
+    when 'project'
+      '鋼瓶發射類'
+    when 'gadge'
+      '道具類'
+    when 'mech'
+      '機械式'
     else
       'error'
     end
   end
-
   def product_type_path(type)
     "#{fireworks_path}/type/#{type}"
   end
@@ -28,13 +31,12 @@ module FireworksHelper
   end
   def products_navs
     render_list do |li|
-      li << link_to(product_type_chinese('effect'), product_type_path('effect'),:class=>'nav-link')
+      li << link_to(product_type_chinese('stage'), product_type_path('stage'),:class=>'nav-link')
+      li << link_to(product_type_chinese('air'), product_type_path('air'),:class=>'nav-link')
+      li << link_to(product_type_chinese('special'), product_type_path('special'),:class=>'nav-link' )
       li << link_to(product_type_chinese('project'), product_type_path('project'),:class=>'nav-link')
-      li << link_to(product_type_chinese('smoke'), product_type_path('smoke'),:class=>'nav-link' )
       li << link_to(product_type_chinese('gadge'), product_type_path('gadge'),:class=>'nav-link')
       li << link_to(product_type_chinese('mech'), product_type_path('mech'),:class=>'nav-link')
-      li << link_to(product_type_chinese('special'), product_type_path('special'),:class=>'nav-link')
-      li << link_to(product_type_chinese('firework'), product_type_path('firework'),:class=>'nav-link')
     end
     # content_tag(:ul,:class => 'nav nav-tabs') do
     #   s = ""
@@ -60,13 +62,12 @@ module FireworksHelper
   end
   def products_navs_admin
     render_list :class => "nav nav-tabs" do |li|
-      li << link_to(product_type_chinese('effect'), product_type_path_admin('effect'))
+      li << link_to(product_type_chinese('stage'), product_type_path_admin('stage'))
+      li << link_to(product_type_chinese('air'), product_type_path_admin('air'))
+      li << link_to(product_type_chinese('special'), product_type_path_admin('special') )
       li << link_to(product_type_chinese('project'), product_type_path_admin('project'))
-      li << link_to(product_type_chinese('smoke'), product_type_path_admin('smoke') )
       li << link_to(product_type_chinese('gadge'), product_type_path_admin('gadge'))
       li << link_to(product_type_chinese('mech'), product_type_path_admin('mech'))
-      li << link_to(product_type_chinese('special'), product_type_path_admin('special'))
-      li << link_to(product_type_chinese('firework'), product_type_path_admin('firework'))
     end
   end
   def youtube_embed(youtube_url)

@@ -3,22 +3,20 @@
   <table class="table">
     <thead>
       <tr>
-        <th>圖片 Thumbnail</th>
+        <th>影片/圖片參考 Reference</th>
         <th>編號 Code</th>
         <th>產品名稱 Product</th>
         <th>產品敘述 Description</th>
-        <th>詳細資料 Detail Reference</th>
       </tr>
     </thead>
 
     <tbody>
       <% @fireworks.each do |firework| %>
       <tr>
-        <td><%= image_tag firework.image.url(:thumb) %></td>
+        <td>  <%= link_to "#{image_tag(firework.image.url(:thumb))}".html_safe, firework %></td>
         <td><%= firework.name_id %></td>
         <td><%= firework.name %></td>
         <td><%= firework.content %></td>
-        <td><%= link_to 'See Reference' , firework%></td>
       </tr>
       <% end %>
     </tbody>
