@@ -1,14 +1,26 @@
-<h3><%=product_type_chinese(@product_type)%></h3>
-<div>
-   <% @fireworks.each do |firework| %>
-   <div>
-        產品編號:<%= firework.name_id %><br>
-        產品名稱:<%= firework.name %><br>
-        產品類型:<%= product_type_chinese(firework.product_type) %><br>
-        產品詳細內容:<%= firework.content %><br>
-        <%= image_tag firework.image.url(:square),:class=>'img-rounded' %><br>
-        <% youtube_thumbnail(firework.youtube_url) if firework.youtube_url? %><br>
-    </div>
-    <hr>
-   <% end %>
+<div class="content-block">
+  <h3><%=product_type_chinese(@product_type)%></h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>圖片 Thumbnail</th>
+        <th>編號 Code</th>
+        <th>產品名稱 Product</th>
+        <th>產品敘述 Description</th>
+        <th>詳細資料 Detail Reference</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @fireworks.each do |firework| %>
+      <tr>
+        <td><%= image_tag firework.image.url(:thumb) %></td>
+        <td><%= firework.name_id %></td>
+        <td><%= firework.name %></td>
+        <td><%= firework.content %></td>
+        <td><%= link_to 'See Reference' , firework%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

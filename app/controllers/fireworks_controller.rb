@@ -1,5 +1,4 @@
 class FireworksController < ApplicationController
-  http_basic_authenticate_with :name => "test", :password => "test", :except => [:home,:index, :show]
   before_action :set_firework, only: [:show, :edit, :update, :destroy]
   def index
     @page_title = "產品列表"
@@ -25,30 +24,7 @@ class FireworksController < ApplicationController
   def show
   end
 
-  # GET /fireworks/new
-  def new
-    @firework = Firework.new
-  end
 
-  # GET /fireworks/1/edit
-  def edit
-  end
-
-  # POST /fireworks
-  # POST /fireworks.json
-  def create
-    @firework = Firework.new(firework_params)
-
-    respond_to do |format|
-      if @firework.save
-        format.html { redirect_to @firework, notice: 'Firework was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @firework }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @firework.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   # PATCH/PUT /fireworks/1
   # PATCH/PUT /fireworks/1.json

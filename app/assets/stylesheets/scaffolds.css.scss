@@ -65,7 +65,9 @@ ul li {
     margin:0;
 }
 li.active a{
-  background-color: #f8c400;
+  color: #f8c400;
   opacity: 1;
-
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #f8c400;
 }
