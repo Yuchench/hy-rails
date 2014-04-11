@@ -1,0 +1,44 @@
+
+
+<h3>宏益舞台特效公司(管理界面)</h3>
+<%= bootstrap_form_tag url: admin_fireworks_path ,:method =>:get , layout: :inline do |f| %>
+  <%= f.text_field :search ,hide_label: true %>
+<%= f.submit "搜尋", class: "btn btn-success" %>
+<% end %>
+<br>
+<%= button_to '新增產品', new_admin_firework_path ,:class => 'btn btn-primary',:method => :get %>
+
+<%=products_navs_admin%>
+
+<br>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>產品編號</th>
+      <th>產品名稱</th>
+      <th>產品類型</th>
+      <th>產品詳細內容</th>
+      <th>產品圖片</th>
+      <th>Youtube</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fireworks.each do |firework| %>
+      <tr>
+        <td><%= firework.name_id %></td>
+        <td><%= firework.name %></td>
+        <td><span class="badge"><%= product_type_chinese(firework.product_type) %></span></td>
+        <td><%= firework.content %></td>
+        <td><%= image_tag firework.image.url(:medium),:class=>'img-thumbnail' %></td>
+        <td><%= youtube_thumbnail(firework.youtube_url) if firework.youtube_url? %></td>
+        <td><%= link_to '詳細內容', firework %></td>
+        <td><%= link_to '編輯', edit_firework_path(firework) %></td>
+        <td><%= link_to '刪除', firework, method: :delete, data: { confirm: '確定刪除此產品？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

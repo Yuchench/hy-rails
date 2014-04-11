@@ -1,6 +1,11 @@
 Myapp::Application.routes.draw do
-  scope '/admin' do
-    resources :fireworks  do
+  resources :fireworks  do
+    collection do
+      get 'type/:product_type', :action => 'index'
+    end
+  end
+  namespace :admin do
+    resources :fireworks do
       collection do
         get 'type/:product_type', :action => 'index'
       end

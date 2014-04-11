@@ -23,7 +23,9 @@ module FireworksHelper
   def product_type_path(type)
     "#{fireworks_path}/type/#{type}"
   end
-
+    def product_type_path_admin(type)
+    "#{admin_fireworks_path}/type/#{type}"
+  end
   def products_navs
     render_list do |li|
       li << link_to(product_type_chinese('effect'), product_type_path('effect'),:class=>'nav-link')
@@ -35,7 +37,7 @@ module FireworksHelper
       li << link_to(product_type_chinese('firework'), product_type_path('firework'),:class=>'nav-link')
     end
     # content_tag(:ul,:class => 'nav nav-tabs') do
-    # 	s = ""
+    #   s = ""
     #   s+=content_tag(:li, product_type_path('effect'))
     #   s+=content_tag(:li, product_type_path('project'))
     #   s+=content_tag(:li, product_type_path('smoke'))
@@ -56,7 +58,18 @@ module FireworksHelper
     # html.html_safe
 
   end
-    def youtube_embed(youtube_url)
+  def products_navs_admin
+    render_list :class => "nav nav-tabs" do |li|
+      li << link_to(product_type_chinese('effect'), product_type_path_admin('effect'))
+      li << link_to(product_type_chinese('project'), product_type_path_admin('project'))
+      li << link_to(product_type_chinese('smoke'), product_type_path_admin('smoke') )
+      li << link_to(product_type_chinese('gadge'), product_type_path_admin('gadge'))
+      li << link_to(product_type_chinese('mech'), product_type_path_admin('mech'))
+      li << link_to(product_type_chinese('special'), product_type_path_admin('special'))
+      li << link_to(product_type_chinese('firework'), product_type_path_admin('firework'))
+    end
+  end
+  def youtube_embed(youtube_url)
     if youtube_url[/youtu\.be\/([^\?]*)/]
       youtube_id = $1
     else
