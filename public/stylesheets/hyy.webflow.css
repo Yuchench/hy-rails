@@ -150,7 +150,7 @@ div {
   margin-top: 20px;
   padding-top: 9px;
   border-radius: 50px;
-  background-color: #3B5998;
+  background-color: #ccc;
 }
 .social-icon:hover {
   background-color: #adadad;
@@ -192,6 +192,17 @@ div {
 }
 
 
+ul{
+      padding:0; 
+}
+ul li {
+    list-style: none;
+    padding:0; 
+    margin:0;
+}
+li.active a{
+  color: #f8c400;
+  opacity: 1;
 }
 
 

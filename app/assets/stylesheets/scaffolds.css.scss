@@ -56,18 +56,7 @@ div {
     list-style: square;
   }
 }
-ul{
-      padding:0; 
-}
-ul li {
-    list-style: none;
-    padding:0; 
-    margin:0;
-}
-li.active a{
-  color: #f8c400;
-  opacity: 1;
-}
+
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
   background-color: #f8c400;
 }
