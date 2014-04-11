@@ -33,11 +33,11 @@
         <td><%= firework.name %></td>
         <td><span class="badge"><%= product_type_chinese(firework.product_type) %></span></td>
         <td><%= firework.content %></td>
-        <td><%= image_tag firework.image.url(:medium),:class=>'img-thumbnail' %></td>
+        <td><%= image_tag firework.image.url(:thumb),:class=>'img-thumbnail' %></td>
         <td><%= youtube_thumbnail(firework.youtube_url) if firework.youtube_url? %></td>
-        <td><%= link_to '詳細內容', firework %></td>
-        <td><%= link_to '編輯', edit_firework_path(firework) %></td>
-        <td><%= link_to '刪除', firework, method: :delete, data: { confirm: '確定刪除此產品？' } %></td>
+        <td><%= link_to '詳細內容', [:admin,firework] %></td>
+        <td><%= link_to '編輯', edit_admin_firework_path(firework) %></td>
+        <td><%= link_to '刪除', [:admin,firework], method: :delete, data: { confirm: '確定刪除此產品？' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,6 +1,6 @@
 class Admin::FireworksController < ApplicationController
 	layout 'admin'
-	http_basic_authenticate_with :name => "test", :password => "test", :except => [:home,:index, :show]
+	http_basic_authenticate_with :name => "test", :password => "test"
   before_action :set_firework, only: [:show, :edit, :update, :destroy]
   def index
     @page_title = "產品列表"
@@ -42,7 +42,7 @@ class Admin::FireworksController < ApplicationController
 
     respond_to do |format|
       if @firework.save
-        format.html { redirect_to @firework, notice: 'Firework was successfully created.' }
+        format.html { redirect_to [:admin,@firework], notice: 'Firework was successfully created.' }
         format.json { render action: 'show', status: :created, location: @firework }
       else
         format.html { render action: 'new' }
@@ -56,7 +56,7 @@ class Admin::FireworksController < ApplicationController
   def update
     respond_to do |format|
       if @firework.update(firework_params)
-        format.html { redirect_to @firework, notice: 'Firework was successfully updated.' }
+        format.html { redirect_to [:admin,@firework], notice: 'Firework was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

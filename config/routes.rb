@@ -1,5 +1,5 @@
 Myapp::Application.routes.draw do
-  resources :fireworks  do
+  resources :fireworks , :only => [:index] do
     collection do
       get 'type/:product_type', :action => 'index'
     end

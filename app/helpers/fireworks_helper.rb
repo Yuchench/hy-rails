@@ -88,6 +88,6 @@ module FireworksHelper
       youtube_url[/^.*((v\/)|(embed\/)|(watch\?))\??v?=?([^\&\?]*).*/]
       youtube_id = $5
     end
-    %Q{<img src="http://img.youtube.com/vi/#{ youtube_id }/0.jpg" class="img-thumbnail">}.html_safe
+    %Q{<img src="http://img.youtube.com/vi/#{ youtube_id }/0.jpg" class="img-thumbnail" width='100'>}.html_safe
   end
 end
