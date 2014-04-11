@@ -13,7 +13,7 @@
     <tbody>
       <% @fireworks.each do |firework| %>
       <tr>
-        <td>  <%= link_to "#{image_tag(firework.image.url(:thumb))}".html_safe, firework %></td>
+        <td>  <%= link_to "#{image_tag(firework.image.url(:thumb))}".html_safe, firework.youtube_url,:class => 'fancybox-media' %></td>
         <td><%= firework.name_id %></td>
         <td><%= firework.name %></td>
         <td><%= firework.content %></td>

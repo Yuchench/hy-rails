@@ -9,6 +9,25 @@
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "modernizr", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "webflow", "data-turbolinks-track" => true %>
+	<script type="text/javascript">
+		$(document).ready(function() {
+  	$("a.fancybox").fancybox();
+  	$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+	});
+	</script>
 	<%= csrf_meta_tags %>
 </head>
 <body>
