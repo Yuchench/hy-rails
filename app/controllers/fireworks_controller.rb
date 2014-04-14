@@ -11,6 +11,7 @@ class FireworksController < ApplicationController
   end
 
   def home
+    @slides = Slide.all
     @page_title = "產品列表"
     @product_type = params[:product_type]
     if @product_type
@@ -24,7 +25,7 @@ class FireworksController < ApplicationController
   def show
   end
 
-    def create
+  def create
     @firework = Firework.new(firework_params)
 
     respond_to do |format|

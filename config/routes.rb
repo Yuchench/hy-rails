@@ -1,4 +1,6 @@
 Myapp::Application.routes.draw do
+  get "slides/index"
+  get "slides/create"
   resources :fireworks , :only => [:index] do
     collection do
       get 'type/:product_type', :action => 'index'
@@ -12,6 +14,10 @@ Myapp::Application.routes.draw do
     end
   end
 
+  namespace :admin do
+    resources :slides do
+    end
+  end
   #resources :fireworks
 
   root 'fireworks#home'

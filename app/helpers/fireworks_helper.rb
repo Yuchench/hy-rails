@@ -68,6 +68,7 @@ module FireworksHelper
       li << link_to(product_type_chinese('project'), product_type_path_admin('project'))
       li << link_to(product_type_chinese('gadge'), product_type_path_admin('gadge'))
       li << link_to(product_type_chinese('mech'), product_type_path_admin('mech'))
+      li << link_to('Slides', admin_slides_path)
     end
   end
   def youtube_embed(youtube_url)

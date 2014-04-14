@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Caption:<%= @slide.caption %>		
+	<%= link_to '編輯', edit_admin_slide_path(@slide) %> |
+		<%= link_to '返回', admin_slides_path %></div>
+	
+	<div class="panel-body">
+		<p id="notice"><%= notice %></p>
+
+		<p>
+			<%= image_tag @slide.slideimage.url(:medium) %>
+		</p>
+	</div>
+</div>

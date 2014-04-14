@@ -1,0 +1,5 @@
+<%= bootstrap_form_for([:admin,@slide], layout: :horizontal) do |f| %>
+  <%= f.text_field :caption , :label =>'caption' %>
+    <%= f.file_field :slideimage, :label => 'image' %>
+  <%= f.primary "新增" %>
+<% end %>
