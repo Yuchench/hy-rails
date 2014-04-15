@@ -3,6 +3,7 @@ class FireworksController < ApplicationController
   def index
     @page_title = "產品列表"
     @product_type = params[:product_type]
+    @search = params[:search]
     if @product_type
       @fireworks = Firework.all_type(@product_type)
     else

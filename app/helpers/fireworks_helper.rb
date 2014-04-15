@@ -7,20 +7,20 @@
 module FireworksHelper
   def product_type_chinese(type)
     case type
-    when 'stage'
-      '舞台煙火'
-    when 'air'
-      '升空煙火'
-    when 'special'
-      '特殊煙火'
-    when 'project'
-      '鋼瓶發射類'
-    when 'gadge'
-      '道具類'
-    when 'mech'
-      '機械式'
+    when "stage"
+      "舞台煙火"
+    when "air"
+      "升空煙火"
+    when "special"
+      "特殊煙火"
+    when "project"
+      "鋼瓶發射類"
+    when "gadge"
+      "道具類"
+    when "mech"
+      "機械式"
     else
-      '搜尋'
+      "搜尋"
     end
   end
   def product_type_path(type)
