@@ -69,3 +69,7 @@ li.active a{
   opacity: 1;
 }
 
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #f8c400;
+}
