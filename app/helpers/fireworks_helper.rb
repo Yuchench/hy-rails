@@ -38,27 +38,6 @@ module FireworksHelper
       li << link_to(product_type_chinese('gadge'), product_type_path('gadge'),:class=>'nav-link')
       li << link_to(product_type_chinese('mech'), product_type_path('mech'),:class=>'nav-link')
     end
-    # content_tag(:ul,:class => 'nav nav-tabs') do
-    #   s = ""
-    #   s+=content_tag(:li, product_type_path('effect'))
-    #   s+=content_tag(:li, product_type_path('project'))
-    #   s+=content_tag(:li, product_type_path('smoke'))
-    #   s+=content_tag(:li, product_type_path('gadge'))
-    #   s+=content_tag(:li, product_type_path('mech'))
-    #   s+=content_tag(:li, product_type_path('special'))
-    #   s+=content_tag(:li, product_type_path('firework'))
-    #   s.html_safe
-    # end
-    # html = ""
-    # html+=product_type_path('effect')
-    # html+=product_type_path('project')
-    # html+=product_type_path('smoke')
-    # html+=product_type_path('gadge')
-    # html+=product_type_path('mech')
-    # html+=product_type_path('special')
-    # html+=product_type_path('firework')
-    # html.html_safe
-
   end
   def products_navs_admin
     render_list :class => "nav nav-tabs" do |li|
