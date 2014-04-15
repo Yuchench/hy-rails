@@ -1,72 +1,51 @@
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
-	<!-- Indicators -->
-	<ol class="carousel-indicators">
-		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-	</ol>
-	<!-- Wrapper for slides -->
-	<div class="carousel-inner">
-		<div class="item active">
-			<img src="images/item.png">
-			<div class="carousel-caption">
-				slide01
-			</div>
-		</div>
-		<div class="item">
-			<img src="images/item.png">
-			<div class="carousel-caption">
-				slide02
-			</div>
-		</div>
-		<div class="item">
-			<img src="images/item.png">
-			<div class="carousel-caption">
-				slide03
-			</div>
-		</div>
-	</div>
-	<!-- Controls -->
-	<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-		<span class="glyphicon glyphicon-chevron-left"></span>
-	</a>
-	<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-		<span class="glyphicon glyphicon-chevron-right"></span>
-	</a>
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% @slides.each_with_index do |slide,index| %>
+      <%= content_tag(:li,'',:data => {:target => '#carousel-example-generic',:slide_to => index},:class => index ==0 ? 'active' :'') %>
+    <% end %>
+  </ol>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <% @slides.each_with_index do |slide,index| %>
+      <%= content_tag :div, :class => index ==0 ? 'item active' :'item'  do %>
+        <%= image_tag slide.slideimage.url(:medium) %>
+        <%= content_tag(:div, slide.caption ,:class => 'carousel-caption') %>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
 </div>
 <div class="content-block" style="height:0px;">
-	<p id="history">空間魔法學院「宏益舞台特效有限公司」成立於民國七十五年，在張明益總經理領導下，目前是台灣最具規模的舞台特效公司，在「安全為先，顧客至上」的經營哲學引導下，宏益不斷引進及研發全球最先進的焰火特效產品，並發展先進科技的施放技術領域。所以無論是國家級慶典活動、國內外大型演唱會、晚會、電視節目，甚至於街頭、校園、廟會的活動，都有宏益的「魔法蹤影」，而您的需求與肯定，與觀眾一次又一次的讚嘆與驚呼，宏益魔法，永遠為您施展。魔法師守則一 經營哲學-安全為先，顧客至上。魔法師守則二 經營理念-專業、科技、求新。魔法師守則三 經營目標-為每一場演出，主動創造精緻的感官震撼與驚奇。</p>
-
-
-	<div class="contact-us">
-		<table class="table">
-			<tr>
-				<td>聯絡我們 Contact Us</td>
-				<td>
-					<button type="button" class="btn btn-default">台北總公司 Taipei</button>
-
-					<p>
-						地址：台北市內湖區新湖二路164號<br>
-						電話：(02)2790-7765<br>
-						傳真：(02)2790-7435<br>
-
-					</p>
-				</td>
-				<td>
-					<button type="button" class="btn btn-default">屏東分公司 Pingtung</button>
-
-					<p>
-						地址：屏東縣九如鄉耆老村耆老路30號<br>
-						電話：(08)7752-261<br>
-						傳真：(08)7753-203<br>
-						行動電話：0927-696-025 陳先生<br>
-
-					</p>
-				</td>
-			</tr>
-		</table>
-	</div>
-
-
+  <p id="history">空間魔法學院「宏益舞台特效有限公司」成立於民國七十五年，在張明益總經理領導下，目前是台灣最具規模的舞台特效公司，在「安全為先，顧客至上」的經營哲學引導下，宏益不斷引進及研發全球最先進的焰火特效產品，並發展先進科技的施放技術領域。所以無論是國家級慶典活動、國內外大型演唱會、晚會、電視節目，甚至於街頭、校園、廟會的活動，都有宏益的「魔法蹤影」，而您的需求與肯定，與觀眾一次又一次的讚嘆與驚呼，宏益魔法，永遠為您施展。魔法師守則一 經營哲學-安全為先，顧客至上。魔法師守則二 經營理念-專業、科技、求新。魔法師守則三 經營目標-為每一場演出，主動創造精緻的感官震撼與驚奇。</p>
+  <div class="contact-us">
+    <table class="table">
+      <tr>
+        <td>聯絡我們 Contact Us</td>
+        <td>
+          <button type="button" class="btn btn-default">台北總公司 Taipei</button>
+          <p>
+            地址：台北市內湖區新湖二路164號<br>
+            電話：(02)2790-7765<br>
+            傳真：(02)2790-7435<br>
+          </p>
+        </td>
+        <td>
+          <button type="button" class="btn btn-default">屏東分公司 Pingtung</button>
+          <p>
+            地址：屏東縣九如鄉耆老村耆老路30號<br>
+            電話：(08)7752-261<br>
+            傳真：(08)7753-203<br>
+            行動電話：0927-696-025 陳先生<br>
+          </p>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>

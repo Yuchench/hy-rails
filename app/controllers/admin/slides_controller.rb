@@ -1,10 +1,10 @@
 class Admin::SlidesController < ApplicationController
-	layout 'admin'
+  layout 'admin'
   http_basic_authenticate_with :name => "test", :password => "test"
   before_action :set_slide, only: [:show, :edit, :update, :destroy]
   def index
-  	  @page_title = "Slides"
-      @slides = Slide.all
+    @page_title = "Slides"
+    @slides = Slide.all
   end
   def new
     @slide = Slide.new
@@ -24,8 +24,14 @@ class Admin::SlidesController < ApplicationController
   end
   def show
   end
-
-   private
+  def destroy
+    @slide.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_slides_url }
+      format.json { head :no_content }
+    end
+  end
+  private
   # Use callbacks to share common setup or constraints between actions.
   def set_slide
     @slide = Slide.find(params[:id])

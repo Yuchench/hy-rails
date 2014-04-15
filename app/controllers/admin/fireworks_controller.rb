@@ -1,6 +1,6 @@
 class Admin::FireworksController < ApplicationController
-	layout 'admin'
-	http_basic_authenticate_with :name => "test", :password => "test"
+  layout 'admin'
+  http_basic_authenticate_with :name => "test", :password => "test"
   before_action :set_firework, only: [:show, :edit, :update, :destroy]
   def index
     @page_title = "產品列表"
@@ -70,7 +70,7 @@ class Admin::FireworksController < ApplicationController
   def destroy
     @firework.destroy
     respond_to do |format|
-      format.html { redirect_to fireworks_url }
+      format.html { redirect_to admin_fireworks_url }
       format.json { head :no_content }
     end
   end

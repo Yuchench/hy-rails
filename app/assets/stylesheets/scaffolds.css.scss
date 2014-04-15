@@ -73,3 +73,11 @@ li.active a{
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
   background-color: #f8c400;
 }
+.carousel{
+  height:400px;
+  overflow:hidden;
+}
+.carousel-inner > .item > img{
+  margin:auto;
+  width: 1000px;
+}

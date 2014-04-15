@@ -1,4 +1,4 @@
-<%= button_to '新增Slide', new_admin_slide_path ,:class => 'btn btn-primary',:method => :get %>
+<%= button_to '新增投影片', new_admin_slide_path ,:class => 'btn btn-primary',:method => :get %>
 
 
 <%=products_navs_admin%>
@@ -19,7 +19,7 @@
         <td><%= slide.caption %></td>
         <td><%= image_tag slide.slideimage.url(:medium) %></td>
         <td><%= link_to '編輯', edit_admin_slide_path(slide) %></td>
-        <td><%= link_to '刪除', [:admin,slide], method: :delete, data: { confirm: '確定刪除此Slide？' } %></td>
+        <td><%= link_to '刪除', [:admin,slide], method: :delete, data: { confirm: '確定刪除此投影片？' } %></td>
       </tr>
     <% end %>
   </tbody>

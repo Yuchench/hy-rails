@@ -1,5 +1,5 @@
-<%= bootstrap_form_for([:admin,@slide], layout: :horizontal) do |f| %>
-  <%= f.text_field :caption , :label =>'caption' %>
-    <%= f.file_field :slideimage, :label => 'image' %>
+<%= bootstrap_form_for([:admin,@slide]) do |f| %>
+  <%= f.text_field :caption , :label =>'標語' %>
+  <%= f.file_field :slideimage, :label => '圖片(建議圖片小1000x315)' %>
   <%= f.primary "新增" %>
 <% end %>

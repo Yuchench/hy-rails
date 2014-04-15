@@ -1,24 +1,21 @@
 Myapp::Application.routes.draw do
-  get "slides/index"
-  get "slides/create"
+
   resources :fireworks , :only => [:index] do
     collection do
       get 'type/:product_type', :action => 'index'
     end
   end
+
   namespace :admin do
     resources :fireworks do
       collection do
         get 'type/:product_type', :action => 'index'
       end
     end
-  end
-
-  namespace :admin do
     resources :slides do
     end
+    get '/', :to => 'fireworks#index'
   end
-  #resources :fireworks
 
   root 'fireworks#home'
   # The priority is based upon order of creation: first created -> highest priority.
