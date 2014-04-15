@@ -20,13 +20,13 @@ module FireworksHelper
     when 'mech'
       '機械式'
     else
-      'error'
+      '搜尋'
     end
   end
   def product_type_path(type)
     "#{fireworks_path}/type/#{type}"
   end
-    def product_type_path_admin(type)
+  def product_type_path_admin(type)
     "#{admin_fireworks_path}/type/#{type}"
   end
   def products_navs

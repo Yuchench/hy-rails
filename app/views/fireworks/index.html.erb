@@ -1,5 +1,9 @@
 <div class="content-block">
-  <h4><%=product_type_chinese(@product_type)%></h4>
+  <h4 style="color:#f8c400;"><%=product_type_chinese(@product_type)%></h4>
+  <%= bootstrap_form_tag url: fireworks_path ,:method =>:get , layout: :inline do |f| %>
+    <%= f.text_field :search ,hide_label: true %>
+    <%= f.submit "搜尋", class: "btn btn-success" %>
+  <% end %>
   <table class="table">
     <thead>
       <tr>
