@@ -30,15 +30,6 @@ ActiveRecord::Schema.define(version: 20140414105219) do
     t.string   "youtube_url"
   end
 
-  create_table "products", force: true do |t|
-    t.string   "name_id"
-    t.string   "name"
-    t.string   "type"
-    t.string   "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "slides", force: true do |t|
     t.string   "caption"
     t.string   "image"
