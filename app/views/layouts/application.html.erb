@@ -10,23 +10,23 @@
     <%= javascript_include_tag "modernizr", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "webflow", "data-turbolinks-track" => true %>
     <script type="text/javascript">
-      		$(document).ready(function() {
-        	$("a.fancybox").fancybox();
-        	$('.fancybox-media')
-      				.attr('rel', 'media-gallery')
-      				.fancybox({
-      					openEffect : 'none',
-      					closeEffect : 'none',
-      					prevEffect : 'none',
-      					nextEffect : 'none',
+      $(document).ready(function() {
+      $("a.fancybox").fancybox();
+      $('.fancybox-media')
+          .attr('rel', 'media-gallery')
+          .fancybox({
+            openEffect : 'none',
+            closeEffect : 'none',
+            prevEffect : 'none',
+            nextEffect : 'none',
       
-      					arrows : false,
-      					helpers : {
-      						media : {},
-      						buttons : {}
-      					}
-      				});
-      	});
+            arrows : false,
+            helpers : {
+              media : {},
+              buttons : {}
+            }
+          });
+              });
     </script>
     <%= csrf_meta_tags %>
   </head>
@@ -35,9 +35,8 @@
       <!-- LEFT -->
       <div class="w-col w-col-4 left-sidebar">
         <div class="fixed-nav">
-          <a href="/"><img class="logo" src="/images/logo.png" width="590"></a>
+          <a href="/"><img class="logo" src="/images/logo.png" width="403"></a>
           <%=products_navs%>
-
           <div class="italic-text">&copy;2014 Hong-Yi Tech Co., LTD. All rights reserved.</div>
         </div>
       </div>
