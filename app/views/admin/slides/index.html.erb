@@ -1,7 +1,3 @@
-<%= button_to '新增投影片', new_admin_slide_path ,:class => 'btn btn-primary',:method => :get %>
-
-
-<%=products_navs_admin%>
 <br>
 <table class="table table-striped table-hover">
   <thead>
@@ -12,7 +8,6 @@
       <th></th>
     </tr>
   </thead>
-
   <tbody>
     <% @slides.each do |slide| %>
       <tr>

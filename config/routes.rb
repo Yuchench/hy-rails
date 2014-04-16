@@ -14,6 +14,8 @@ Myapp::Application.routes.draw do
     end
     resources :slides do
     end
+    resources :events do
+    end
     get '/', :to => 'fireworks#index'
   end
 

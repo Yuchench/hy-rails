@@ -19,6 +19,8 @@ module FireworksHelper
       "道具類 Stage Props"
     when "mech"
       "機械式 Mechanical"
+    when "effect"
+      "特殊效果 Special Effect"
     else
       "搜尋"
     end
@@ -37,17 +39,20 @@ module FireworksHelper
       li << link_to(product_type_chinese('project'), product_type_path('project'),:class=>'nav-link')
       li << link_to(product_type_chinese('gadge'), product_type_path('gadge'),:class=>'nav-link')
       li << link_to(product_type_chinese('mech'), product_type_path('mech'),:class=>'nav-link')
+      li << link_to(product_type_chinese('effect'), product_type_path('effect'),:class=>'nav-link')
       li << link_to('關於我們 ABOUT US', page_path('about'),:class=>'nav-link')
     end
   end
   def products_navs_admin
-    render_list :class => "nav nav-tabs" do |li|
+    render_list :class => "nav nav-pills nav-justified" do |li|
+      li << link_to('最新活動', admin_events_path)
       li << link_to(product_type_chinese('stage'), product_type_path_admin('stage'))
       li << link_to(product_type_chinese('air'), product_type_path_admin('air'))
       li << link_to(product_type_chinese('special'), product_type_path_admin('special') )
       li << link_to(product_type_chinese('project'), product_type_path_admin('project'))
       li << link_to(product_type_chinese('gadge'), product_type_path_admin('gadge'))
       li << link_to(product_type_chinese('mech'), product_type_path_admin('mech'))
+      li << link_to(product_type_chinese('effect'), product_type_path_admin('effect'))
       li << link_to('投影片', admin_slides_path)
     end
   end

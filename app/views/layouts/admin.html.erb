@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<%= render_page_title %> 
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body class="container">
-<h3>宏益舞台特效公司(管理界面)</h3>
-<%= yield %>
-
-</body>
+  <head>
+    <%= render_page_title %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="container">
+    <h3><%= link_to("宏益舞台特效公司(管理界面)", admin_fireworks_path) %></h3>
+    <%= bootstrap_form_tag url: admin_fireworks_path ,:method =>:get , layout: :inline do |f| %>
+      <%= f.text_field :search ,hide_label: true %>
+      <%= f.submit "搜尋", class: "btn btn-success" %>
+    <% end %>
+    <br>
+    <div class="btn-group">
+      <%= link_to '新增產品', new_admin_firework_path ,:class => 'btn btn-primary form-inline',:method => :get %>
+      <%= link_to '新增活動', new_admin_event_path ,:class => 'btn btn-primary',:method => :get %>
+      <%= link_to '新增投影片', new_admin_slide_path ,:class => 'btn btn-primary',:method => :get %>
+    </div>
+    <br>
+    <br>
+    <%=products_navs_admin%>
+    <%= yield %>
+  </body>
 </html>

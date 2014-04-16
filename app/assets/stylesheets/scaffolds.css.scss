@@ -81,3 +81,8 @@ li.active a{
   margin:auto;
   width: 1000px;
 }
+
+div.bg-img { 
+  background-image: url("https://s3.amazonaws.com/hongyi/bg.jpg") no-repeat center center fixed; 
+   background: color url("https://s3.amazonaws.com/hongyi/bg.jpg") no-repeat center center fixed; 
+}
