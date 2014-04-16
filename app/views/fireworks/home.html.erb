@@ -1,0 +1,22 @@
+<div class="content-block">
+  <%= render partial: 'carousel',locals: {slides: @slides} %>
+  <h4 style="color:#f8c400;">最新活動</h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>活動日期</th>
+        <th>活動名稱</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= event.event_date %></td>
+          <td><%= event.name %></td>
+          <td><%= link_to 'Link',"http://#{event.url}" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

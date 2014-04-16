@@ -13,6 +13,7 @@ class FireworksController < ApplicationController
 
   def home
     @slides = Slide.all
+    @events = Event.all
   end
   # GET /fireworks/1
   # GET /fireworks/1.json
