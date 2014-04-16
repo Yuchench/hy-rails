@@ -4,7 +4,7 @@ body {
   background-attachment: fixed;
   background-position: center; 
   font-family: "Microsoft JhengHei", Arial, Helvetica, sans-serif;
-    color: #888888;
+  color: #888888;
   font-size: 16px;
   line-height: 20px;
 }
@@ -12,9 +12,9 @@ body,html{
   height: 100%; 
 }
 h1 {
-          margin-right: 0px;
-     margin-bottom: 10px;
-       margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
   padding-top: 25px;
   font-size: 20px;
   line-height: 44px;
@@ -22,7 +22,7 @@ h1 {
   font-family: "Microsoft JhengHei", Arial, Helvetica, sans-serif;
 }
 h2 {
-     margin: 10px 0px;
+  margin: 10px 0px;
   font-size: 32px;
   line-height: 36px;
   font-weight: 700;
@@ -76,7 +76,7 @@ a {
 .content-block {
   width: 92%;
   height: 100vh;
-  margin-top: 25px;
+  margin-top: 50px;
   margin-bottom: 25px;
   padding-left: 25px;
 }
@@ -97,15 +97,17 @@ a {
 .content-column {
   padding-top: 0px;
   height: 100vh;
-  padding-right: 0px;
-  padding-left: 0px;
   border-left: 1px solid #333;
   background-color: black;
+  padding: 0px 20px;
 }
 
 .history {
-   padding: 0px 30px;
+    margin-top: 15px;
+    padding: 0px 20px;
 }
+
+
 
 
 .contact-us {
