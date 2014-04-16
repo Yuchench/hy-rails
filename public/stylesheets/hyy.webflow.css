@@ -4,7 +4,7 @@ body {
   background-attachment: fixed;
   background-position: center; 
   font-family: "Microsoft JhengHei", Arial, Helvetica, sans-serif;
-  color: #888888;
+    color: #888888;
   font-size: 16px;
   line-height: 20px;
 }
@@ -12,9 +12,9 @@ body,html{
   height: 100%; 
 }
 h1 {
-  margin-right: 0px;
-  margin-bottom: 10px;
-  margin-left: 0px;
+          margin-right: 0px;
+     margin-bottom: 10px;
+       margin-left: 0px;
   padding-top: 25px;
   font-size: 20px;
   line-height: 44px;
@@ -22,7 +22,7 @@ h1 {
   font-family: "Microsoft JhengHei", Arial, Helvetica, sans-serif;
 }
 h2 {
-  margin: 10px 0px;
+     margin: 10px 0px;
   font-size: 32px;
   line-height: 36px;
   font-weight: 700;
@@ -151,7 +151,7 @@ a {
 .italic-text {
   margin-top: 18px;
   margin-bottom: 17px;
-  color: #adadad;
+  color: #888888;
   font-style: italic;
   font-weight: 400;
 }

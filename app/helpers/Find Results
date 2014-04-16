@@ -1,0 +1,82 @@
+Searching 322 files for "all rights"
+
+/Users/ycchang/Projects/hy-rails/app/views/layouts/application.html.erb:
+   38            <a href="/"><img class="logo" src="/images/logo.png" width="403"></a>
+   39            <%=products_navs%>
+   40:           <div class="italic-text">&copy;2014 Hong-Yi Tech Co., LTD. All rights reserved.</div>
+   41          </div>
+   42        </div>
+
+1 match in 1 file
+
+
+Searching 322 files for "italic-text"
+
+/Users/ycchang/Projects/hy-rails/app/views/layouts/application.html.erb:
+   38            <a href="/"><img class="logo" src="/images/logo.png" width="403"></a>
+   39            <%=products_navs%>
+   40:           <div class="italic-text">&copy;2014 宏益舞台特效有限公司 All rights reserved.</div>
+   41          </div>
+   42        </div>
+
+/Users/ycchang/Projects/hy-rails/public/stylesheets/hyy.webflow.css:
+  149    margin-bottom: 10px;
+  150  }
+  151: .italic-text {
+  152    margin-top: 18px;
+  153    margin-bottom: 17px;
+  ...
+  156    font-weight: 400;
+  157  }
+  158: .italic-text.footer {
+  159    width: 90%;
+  160  }
+
+3 matches across 2 files
+
+
+
+Searching 322 files for "舞台煙火"
+
+/Users/ycchang/Projects/hy-rails/app/helpers/fireworks_helper.rb:
+    1: # # ["舞台煙火","stage"],
+    2  #  ["升空煙火","air"],
+    3  #   ["特殊煙火","special"],
+    .
+    9      case type
+   10      when "stage"
+   11:       "舞台煙火"
+   12      when "air"
+   13        "升空煙火"
+
+/Users/ycchang/Projects/hy-rails/app/views/admin/fireworks/_form.html.erb:
+    2    <%= f.text_field :name_id , :label =>'產品編號' %>
+    3    <%= f.text_field :name , :label =>'產品名稱' %>
+    4:    <%= f.select :product_type, options_for_select([["請選擇種類", ""], ["舞台煙火","stage"], ["升空煙火","air"], ["特殊煙火","special"],["鋼瓶發射類","project"],["道具類","gadge"],["機械式","mech"]]) %>
+    5         <%= f.text_area :content, :label => '產品詳細內容' %>
+    6      <%= f.file_field :image, :label => '產品圖片' %>
+
+3 matches across 2 files
+
+
+Searching 322 files for "舞台煙火"
+
+/Users/ycchang/Projects/hy-rails/app/helpers/fireworks_helper.rb:
+    1: # # ["舞台煙火","stage"],
+    2  #  ["升空煙火","air"],
+    3  #   ["特殊煙火","special"],
+    .
+    9      case type
+   10      when "stage"
+   11:       "舞台煙火 Stage Pyro"
+   12      when "air"
+   13        "升空煙火 Fireworks"
+
+/Users/ycchang/Projects/hy-rails/app/views/admin/fireworks/_form.html.erb:
+    2    <%= f.text_field :name_id , :label =>'產品編號' %>
+    3    <%= f.text_field :name , :label =>'產品名稱' %>
+    4:    <%= f.select :product_type, options_for_select([["請選擇種類", ""], ["舞台煙火","stage"], ["升空煙火","air"], ["特殊煙火","special"],["鋼瓶發射類","project"],["道具類","gadge"],["機械式","mech"]]) %>
+    5         <%= f.text_area :content, :label => '產品詳細內容' %>
+    6      <%= f.file_field :image, :label => '產品圖片' %>
+
+3 matches across 2 files
