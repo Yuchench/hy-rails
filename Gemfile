@@ -48,6 +48,8 @@ gem 'unicorn'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
+# static page
+gem 'high_voltage', '~> 2.1.0'
 
 # upload s3
 gem 'paperclip'

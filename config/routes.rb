@@ -17,6 +17,7 @@ Myapp::Application.routes.draw do
     get '/', :to => 'fireworks#index'
   end
 
+  get 'about' => 'high_voltage/pages#show', id: 'about'
   root 'fireworks#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

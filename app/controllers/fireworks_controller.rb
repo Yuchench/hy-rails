@@ -13,13 +13,6 @@ class FireworksController < ApplicationController
 
   def home
     @slides = Slide.all
-    @page_title = "產品列表"
-    @product_type = params[:product_type]
-    if @product_type
-      @fireworks = Firework.all_type(@product_type)
-    else
-      @fireworks = Firework.all
-    end
   end
   # GET /fireworks/1
   # GET /fireworks/1.json

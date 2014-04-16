@@ -37,6 +37,7 @@ module FireworksHelper
       li << link_to(product_type_chinese('project'), product_type_path('project'),:class=>'nav-link')
       li << link_to(product_type_chinese('gadge'), product_type_path('gadge'),:class=>'nav-link')
       li << link_to(product_type_chinese('mech'), product_type_path('mech'),:class=>'nav-link')
+      li << link_to('關於我們 ABOUT US', page_path('about'),:class=>'nav-link')
     end
   end
   def products_navs_admin
