@@ -9,8 +9,8 @@
   <body class="container">
     <h3><%= link_to("宏益舞台特效公司(管理界面)", admin_fireworks_path) %>
       <%= link_to("瀏覽前台", "/") %>
-      <%= link_to("Logout", destroy_user_session_path, :method => :delete) %>
     </h3>
+    <%= link_to("登出", destroy_user_session_path, :method => :delete) %>
     <%= bootstrap_form_tag url: admin_fireworks_path ,:method =>:get , layout: :inline do |f| %>
       <%= f.text_field :search ,hide_label: true %>
       <%= f.submit "搜尋", class: "btn btn-success" %>
