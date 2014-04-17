@@ -119,6 +119,7 @@ a {
 
 .logo {
   margin-bottom: 40px;
+max-width: 300px;
 }
 .nav-link {
   display: block;
