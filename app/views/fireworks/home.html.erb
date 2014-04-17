@@ -16,7 +16,7 @@
             <tr>
               <td><%= event.event_date %></td>
               <td><%= event.name %></td>
-              <td><%= link_to 'Link',"http://#{event.url}" %></td>
+              <td><%= link_to 'Link',event.url %></td>
             </tr>
           <% end %>
         </tbody>

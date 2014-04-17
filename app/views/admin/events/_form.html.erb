@@ -1,6 +1,6 @@
 <%= bootstrap_form_for([:admin,@event], layout: :horizontal) do |f| %>
   <%= f.text_field :name , :label =>'活動名稱' %>
   <%= f.date_field :event_date , :label =>'活動日期' %>
-  <%= f.text_field :url, :label => 'URL' %>
+  <%= f.text_field :url, :label => 'URL(包含http)' %>
   <%= f.primary "新增" %>
 <% end %>
