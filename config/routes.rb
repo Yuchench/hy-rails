@@ -1,11 +1,11 @@
 Myapp::Application.routes.draw do
 
 
-  if Rails.env.production?
-    devise_for :users, controllers: { sessions: "admin/sessions" }
-  else
-    devise_for :users
-  end
+  # if Rails.env.production?
+  #   devise_for :users, controllers: { sessions: "admin/sessions" }
+  # else
+  devise_for :users
+  #end
 
 
   resources :fireworks , :only => [:index] do
