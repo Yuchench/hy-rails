@@ -14,4 +14,9 @@ class Firework < ActiveRecord::Base
   end
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  validates :youtube_url, presence: true
+  validates :image, presence: true
+  validates :name, presence: true
+  validates :name_id, presence: true
+  validates :product_type,presence: true
 end
