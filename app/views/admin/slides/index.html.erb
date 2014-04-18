@@ -5,7 +5,6 @@
       <th>Caption</th>
       <th>Image</th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -13,7 +12,6 @@
       <tr>
         <td><%= slide.caption %></td>
         <td><%= image_tag slide.slideimage.url(:medium) %></td>
-        <td><%= link_to '編輯', edit_admin_slide_path(slide) %></td>
         <td><%= link_to '刪除', [:admin,slide], method: :delete, data: { confirm: '確定刪除此投影片？' } %></td>
       </tr>
     <% end %>
