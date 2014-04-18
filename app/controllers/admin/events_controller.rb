@@ -5,7 +5,7 @@ class Admin::EventsController < ApplicationController
 
   def index
     @page_title = "最新活動"
-    @events = Event.all
+    @events = Event.all.order('event_date DESC')
   end
 
   def show
