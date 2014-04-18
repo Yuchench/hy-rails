@@ -1,11 +1,11 @@
 class Admin::EventsController < ApplicationController
   layout 'admin'
-  http_basic_authenticate_with :name => "test", :password => "test"
+  before_action :authenticate_user!
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
     @page_title = "最新活動"
-    @events = Event.all
+    @events = Event.all.order('event_date DESC')
   end
 
   def show

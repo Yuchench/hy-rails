@@ -2,7 +2,7 @@
   <%= render partial: 'carousel',locals: {slides: @slides} %>
   <div class="w-row">
     <div class="w-col w-col-6" style="padding-right:30px;">
-      <h4 style="color:#f8c400;">最新活動</h4>
+      <h4 style="color:#f8c400;">最新活動 Events</h4>
       <table class="table">
         <thead>
           <tr>
@@ -16,7 +16,7 @@
             <tr>
               <td><%= event.event_date %></td>
               <td><%= event.name %></td>
-              <td><%= link_to 'Link',"http://#{event.url}" %></td>
+              <td><%= link_to 'Link',event.url %></td>
             </tr>
           <% end %>
         </tbody>
@@ -34,7 +34,7 @@
       </p>
     </div>
   </div>
-  <div class="contact-us">
+  <div class="w-col w-col-12">
     <table class="table">
       <tr>
         <td><strong>聯絡我們 Contact Us</strong><br>
@@ -45,18 +45,21 @@
             <%=image_tag("8b-social-facebook.png",width: '21')%>
           </a>
         </td>
-        <td><strong>台北總公司 Taipei Main</strong>
+        <td>
           <p>
-            地址：台北市內湖區新湖二路164號<br>
+            地址：114 台北市內湖區新湖二路164號<br>
             電話：(02)2790-7765<br>
             傳真：(02)2790-7435<br>
+            電子郵件：hongyii@ms18.hinet.net
           </p>
         </td>
-        <td><strong>屏東分公司 Pingtung</strong>
+        <td>
           <p>
-            地址：屏東縣九如鄉耆老村耆老路30號<br>
-            電話：(08)7752-261<br>
-            傳真：(08)7753-203<br>
+            Address：1F., No.164, Sinhu 2nd Rd.,<br>
+            Neihu District, Taipei City 114, Taiwan (R.O.C.)<br>
+            Tel：+886-2-2790-7765<br>
+            Fax：+886-2-2790-7435<br>
+            E-mail：hongyii@ms18.hinet.net
           </p>
         </td>
       </tr>

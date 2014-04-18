@@ -1,0 +1,16 @@
+<h4>登入</h4>
+<div style="width:33%">
+  <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name),layout: :horizontal) do |f| %>
+    <%= f.email_field :email, autofocus: true,:label=>'Email' %>
+    <%= f.password_field :password, autocomplete: "off",:label=>'密碼' %>
+    <% if devise_mapping.rememberable? -%>
+      <%= f.check_box :remember_me,:label=>'記得我' %>
+    <% end -%>
+    <br>
+    <br>
+    <div><%= f.primary "登入後台" %></div>
+  <% end %>
+  <br>
+  <br>
+  <%= render "devise/shared/links" %>
+</div>

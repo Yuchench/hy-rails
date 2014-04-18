@@ -1,7 +1,8 @@
 class Admin::FireworksController < ApplicationController
   layout 'admin'
-  http_basic_authenticate_with :name => "test", :password => "test"
   before_action :set_firework, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+
   def index
     @page_title = "產品列表"
     @product_type = params[:product_type]

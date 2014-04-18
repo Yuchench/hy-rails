@@ -7,22 +7,26 @@
     <%= csrf_meta_tags %>
   </head>
   <body class="container">
-    <h3><%= link_to("宏益舞台特效公司(管理界面)", admin_fireworks_path) %>
-      <%= link_to("瀏覽前台", "/") %>
-    </h3>
-    <%= bootstrap_form_tag url: admin_fireworks_path ,:method =>:get , layout: :inline do |f| %>
-      <%= f.text_field :search ,hide_label: true %>
-      <%= f.submit "搜尋", class: "btn btn-success" %>
-    <% end %>
-    <br>
-    <div class="btn-group">
-      <%= link_to '新增產品', new_admin_firework_path ,:class => 'btn btn-primary form-inline',:method => :get %>
-      <%= link_to '新增活動', new_admin_event_path ,:class => 'btn btn-primary',:method => :get %>
-      <%= link_to '新增投影片', new_admin_slide_path ,:class => 'btn btn-primary',:method => :get %>
+    <div class="row">
+      <h3><%= link_to("宏益舞台特效公司(管理界面)", admin_fireworks_path) %>
+      </h3>
+      <div class="btn-group">
+        <%= link_to '新增產品', new_admin_firework_path ,:class => 'btn btn-primary form-inline',:method => :get %>
+        <%= link_to '新增活動', new_admin_event_path ,:class => 'btn btn-primary',:method => :get %>
+        <%= link_to '新增投影片', new_admin_slide_path ,:class => 'btn btn-primary',:method => :get %>
+      </div>
+      <%= link_to("瀏覽前台", "/" ,:class => 'btn btn-info',:target => '_blank') %>
+      <%= link_to("登出", destroy_user_session_path, :method => :delete,:class => 'btn btn-danger') %>
+      <br>
+      <br>
+      <%= bootstrap_form_tag url: admin_fireworks_path ,:method =>:get , layout: :inline do |f| %>
+        <%= f.text_field :search ,hide_label: true %>
+        <%= f.submit "搜尋", class: "btn btn-success" %>
+      <% end %>
+      <br>
+      <br>
+      <%=products_navs_admin%>
+      <%= yield %>
     </div>
-    <br>
-    <br>
-    <%=products_navs_admin%>
-    <%= yield %>
   </body>
 </html>
