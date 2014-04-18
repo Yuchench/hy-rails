@@ -7,7 +7,7 @@ class Firework < ActiveRecord::Base
   }
   def self.search(search)
     if search
-      find(:all, :conditions => ['lower(name) LIKE ? OR lower(name_id) LIKE ?',"%#{search.downcase}%","%#{search.downcase}%"])
+      find(:all, :conditions => ['lower(name) LIKE ? OR lower(name_id) LIKE ? OR lower(content) LIKE ?',"%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%"])
     else
       find(:all)
     end
