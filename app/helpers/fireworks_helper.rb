@@ -14,7 +14,11 @@ module FireworksHelper
   def products_navs
     render_list do |li|
       Firework.product_types.each do |type_chinese_name,type_code|
-        li << link_to(type_chinese_name, type_fireworks_path(type_code),:class=>'nav-link')
+        if type_code == 'gadge'
+          li << link_to(type_chinese_name, sub_type_fireworks_path(type_code,'fake'),:class=>'nav-link')
+        else
+          li << link_to(type_chinese_name, type_fireworks_path(type_code),:class=>'nav-link')
+        end
       end
     end
   end
