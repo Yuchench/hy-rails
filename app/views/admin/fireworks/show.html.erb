@@ -1,33 +1,34 @@
 <h3>宏益舞台特效公司(管理界面)</h3>
-
 <div class="panel panel-default">
-	<div class="panel-heading">產品編號:<%= @firework.name_id %>		
-	<%= link_to '編輯', edit_admin_firework_path(@firework) %> |
-		<%= link_to '返回', admin_fireworks_path %></div>
-	
-	<div class="panel-body">
-		<p id="notice"><%= notice %></p>
-
-
-		<p>
-			<strong>產品名稱:</strong>
-			<%= @firework.name %>
-		</p>
-
-		<p>
-			<strong>產品類型:</strong>
-			<%= product_type_chinese @firework.product_type %>
-		</p>
-
-		<p>
-			<strong>產品詳細內容:</strong>
-			<%= @firework.content %>
-		</p>
-		<p>
-			<%= youtube_embed ( @firework.youtube_url )  if @firework.youtube_url? %>
-		</p>
-		<p>
-			<%= image_tag @firework.image.url(:medium) %>
-		</p>
-	</div>
+  <div class="panel-heading">產品編號:<%= @firework.name_id %>
+    <%= link_to '編輯', edit_admin_firework_path(@firework) %>
+    |
+    <%= link_to '返回', admin_fireworks_path %></div>
+  <div class="panel-body">
+    <p id="notice"><%= notice %></p>
+    <p>
+      <strong>產品名稱:</strong>
+      <%= @firework.name %>
+    </p>
+    <p>
+      <strong>產品類型:</strong>
+      <%= product_type_chinese @firework.product_type %>
+    </p>
+    <p>
+      <strong>產品子分類:</strong>
+      <%= sub_type_chinese(@firework.sub_type) %>
+    </p>
+    <p>
+      <strong>產品詳細內容:</strong>
+      <%= @firework.content %>
+    </p>
+    <p>
+      <%= youtube_embed ( @firework.youtube_url )  if @firework.youtube_url? %>
+    </p>
+    <p>
+      <%= image_tag @firework.image.url(:medium) %>
+    </p>
+    <p>
+    </p>
+  </div>
 </div>

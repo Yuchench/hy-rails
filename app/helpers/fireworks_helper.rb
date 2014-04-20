@@ -1,58 +1,46 @@
-# # ["舞台煙火","stage"],
-#  ["升空煙火","air"],
-#   ["特殊煙火","special"],
-#   ["鋼瓶發射類","project"],
-#   ["道具類","gadge"],
-#   ["機械式","mech"]]) %>
 module FireworksHelper
+  def sub_type_chinese(sub_type)
+    Firework.product_sub_type.index(sub_type)
+  end
   def product_type_chinese(type)
-    case type
-    when "stage"
-      "舞台煙火 Stage Pyro"
-    when "air"
-      "升空煙火 Fireworks"
-    when "special"
-      "特殊煙火 Special Pyro"
-    when "project"
-      "鋼瓶發射類 Cylinder"
-    when "gadge"
-      "道具類 Stage Props"
-    when "mech"
-      "機械式 Mechanical"
-    when "effect"
-      "特殊效果 Special Effect"
+    chinese = Firework.product_types.index(type)
+    if chinese
+      chinese
     else
-      "搜尋"
+      "搜尋 Search"
     end
   end
-  def product_type_path(type)
-    "#{fireworks_path}/type/#{type}"
-  end
-  def product_type_path_admin(type)
-    "#{admin_fireworks_path}/type/#{type}"
-  end
+
   def products_navs
     render_list do |li|
-      li << link_to(product_type_chinese('stage'), product_type_path('stage'),:class=>'nav-link')
-      li << link_to(product_type_chinese('air'), product_type_path('air'),:class=>'nav-link')
-      li << link_to(product_type_chinese('special'), product_type_path('special'),:class=>'nav-link' )
-      li << link_to(product_type_chinese('project'), product_type_path('project'),:class=>'nav-link')
-      li << link_to(product_type_chinese('gadge'), product_type_path('gadge'),:class=>'nav-link')
-      li << link_to(product_type_chinese('mech'), product_type_path('mech'),:class=>'nav-link')
-      li << link_to(product_type_chinese('effect'), product_type_path('effect'),:class=>'nav-link')
+      Firework.product_types.each do |type_chinese_name,type_code|
+        li << link_to(type_chinese_name, type_fireworks_path(type_code),:class=>'nav-link')
+      end
     end
   end
   def products_navs_admin
     render_list :class => "nav nav-pills nav-justified" do |li|
       li << link_to('最新活動', admin_events_path)
-      li << link_to(product_type_chinese('stage'), product_type_path_admin('stage'))
-      li << link_to(product_type_chinese('air'), product_type_path_admin('air'))
-      li << link_to(product_type_chinese('special'), product_type_path_admin('special') )
-      li << link_to(product_type_chinese('project'), product_type_path_admin('project'))
-      li << link_to(product_type_chinese('gadge'), product_type_path_admin('gadge'))
-      li << link_to(product_type_chinese('mech'), product_type_path_admin('mech'))
-      li << link_to(product_type_chinese('effect'), product_type_path_admin('effect'))
       li << link_to('投影片', admin_slides_path)
+      Firework.product_types.each do |type_chinese_name,type_code|
+        li << link_to(type_chinese_name, type_admin_fireworks_path(type_code))
+      end
+    end
+  end
+  #    {'真假火焰類' => 'fake', '啟動魔球類' => 'ball','啟動台類' => 'site','其他道具類' => 'other'}
+
+  def sub_navs_admin(product_type)
+    render_list :class => "pager" do |li|
+      Firework.product_sub_type.each  do |sub_type_chinese_name, sub_type_code|
+        li << link_to(sub_type_chinese_name, sub_type_admin_fireworks_path(product_type,sub_type_code))
+      end
+    end
+  end
+  def sub_navs(product_type)
+    render_list :class => "breadcrumb" do |li|
+      Firework.product_sub_type.each  do |sub_type_chinese_name, sub_type_code|
+        li << link_to(sub_type_chinese_name, sub_type_fireworks_path(product_type,sub_type_code))
+      end
     end
   end
   def youtube_embed(youtube_url)

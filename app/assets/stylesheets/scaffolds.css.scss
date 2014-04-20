@@ -6,7 +6,7 @@ body {
   line-height: 18px;
 }
 
-p, ol, ul, td {
+p, ol, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 20px;
@@ -76,4 +76,7 @@ li.active a{
 div.bg-img { 
   background-image: url("https://s3.amazonaws.com/hongyi/bg.jpg") no-repeat center center fixed; 
    background: color url("https://s3.amazonaws.com/hongyi/bg.jpg") no-repeat center center fixed; 
+}
+.breadcrumb {
+  background-color:black;
 }

@@ -10,14 +10,16 @@ Myapp::Application.routes.draw do
 
   resources :fireworks , :only => [:index] do
     collection do
-      get 'type/:product_type', :action => 'index'
+      get 'type/:product_type'=> 'fireworks#index',as: :type
+      get 'type/:product_type/:sub_type' => 'fireworks#index',as: :sub_type
     end
   end
 
   namespace :admin do
     resources :fireworks do
       collection do
-        get 'type/:product_type', :action => 'index'
+        get 'type/:product_type'=> 'fireworks#index',as: :type
+        get 'type/:product_type/:sub_type' => 'fireworks#index',as: :sub_type
       end
     end
     resources :slides do

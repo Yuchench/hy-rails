@@ -1,7 +1,8 @@
 <%= bootstrap_form_for([:admin,@firework], layout: :horizontal) do |f| %>
   <%= f.text_field :name_id , :label =>'產品編號' %>
   <%= f.text_field :name , :label =>'產品名稱' %>
-  <%= f.select :product_type, options_for_select([["請選擇種類", ""], ["舞台煙火","stage"], ["升空煙火","air"], ["特殊煙火","special"],["鋼瓶發射類","project"],["道具類","gadge"],["機械式","mech"],["特殊效果","effect"]]) , :label => '產品類型' %>
+  <%= f.select :product_type, options_for_select(Firework.product_types,f.object.product_type) , :label => '產品類型' %>
+  <%= f.select :sub_type,options_for_select(Firework.product_sub_type,f.object.sub_type) ,:label => '子類',:prompt => '請選擇子類'%>
   <%= f.text_area :content, :label => '產品詳細內容' %>
   <%= f.file_field :image, :label => '產品圖片' %>
   <%= f.text_field :youtube_url, :label => 'Youtube Link' %>

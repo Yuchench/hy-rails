@@ -25,7 +25,8 @@
       <% end %>
       <br>
       <br>
-      <%=products_navs_admin%>
+      <%= products_navs_admin %>
+      <%= sub_navs_admin(@product_type) if @product_type == 'gadge' %>
       <%= yield %>
     </div>
   </body>

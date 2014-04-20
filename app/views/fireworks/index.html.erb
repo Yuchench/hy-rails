@@ -4,6 +4,8 @@
     <%= text_field_tag :search ,@search %>
     <%= submit_tag "搜尋" %>
   <% end %>
+  <br>
+  <h4><%= sub_navs(@product_type) if @product_type == 'gadge' %></h4>
   <table class="table">
     <thead>
       <tr>

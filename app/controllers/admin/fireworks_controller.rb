@@ -6,9 +6,14 @@ class Admin::FireworksController < ApplicationController
   def index
     @page_title = "產品列表"
     @product_type = params[:product_type]
+    @sub_type = params[:sub_type]
     @search = params[:search]
     if @product_type
-      @fireworks = Firework.all_type(@product_type)
+      if @sub_type
+        @fireworks = Firework.all_type(@product_type).sub_type(@sub_type)
+      else
+        @fireworks = Firework.all_type(@product_type)
+      end
     else
       @fireworks = Firework.search(params[:search])
     end
@@ -85,6 +90,6 @@ class Admin::FireworksController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def firework_params
-    params.require(:firework).permit(:name_id, :name, :product_type, :content,:image,:youtube_url)
+    params.require(:firework).permit(:name_id, :name, :product_type, :content,:image,:youtube_url,:sub_type)
   end
 end
