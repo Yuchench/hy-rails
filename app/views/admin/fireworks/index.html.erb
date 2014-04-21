@@ -6,8 +6,8 @@
       <th>產品名稱</th>
       <th>產品類型</th>
       <th>產品詳細內容</th>
-      <th>產品圖片</th>
-      <th>Youtube</th>
+      <th>圖片</th>
+      <th>影片</th>
       <th></th>
       <th></th>
       <th></th>
@@ -23,8 +23,10 @@
           <%= sub_type_chinese(firework.sub_type) if firework.sub_type? %>
         </td>
         <td><%= firework.content %></td>
-        <td><%= image_tag firework.image.url(:thumb),:class=>'img-thumbnail' %></td>
-        <td><%= youtube_thumbnail(firework.youtube_url) if firework.youtube_url? %></td>
+        <td>
+          <%= link_to "#{image_tag(firework.image.url(:thumb))}".html_safe, firework.image.url(:medium),:class => 'fancybox-media' %></td>
+        <td>
+          <%= link_to "#{youtube_thumbnail_small(firework.youtube_url)}".html_safe, firework.youtube_url,:class => 'fancybox-media' %></td>
         <td><%= link_to '詳細內容', [:admin,firework] %></td>
         <td><%= link_to '編輯', edit_admin_firework_path(firework) %></td>
         <td><%= link_to '刪除', [:admin,firework], method: :delete, data: { confirm: '確定刪除此產品？' } %></td>
