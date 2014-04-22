@@ -4,7 +4,7 @@ class Firework < ActiveRecord::Base
   has_attached_file :image, styles: {
     thumb: '100x100#',
     square: '200x200#',
-    medium: '600x600>'
+    medium: '2000x2000>'
   }
   def self.product_sub_type
     {'真假火焰類' => 'fake', '啟動魔球類' => 'ball','啟動台類' => 'site','其他道具類' => 'other'}

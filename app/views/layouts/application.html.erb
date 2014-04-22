@@ -17,16 +17,14 @@
       $('.fancybox-media')
           .attr('rel', 'media-gallery')
           .fancybox({
-            openEffect : 'none',
-            closeEffect : 'none',
+            openEffect : 'elastic',
+            closeEffect : 'elastic',
             prevEffect : 'none',
             nextEffect : 'none',
-      
+             padding : 1,
             arrows : false,
             helpers : {
-              media : {},
-              buttons : {}
-            }
+              media : {}            }
           });
               });
     </script>

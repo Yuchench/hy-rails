@@ -9,9 +9,10 @@
   <table class="table">
     <thead>
       <tr>
-        <th>影片/圖片參考 Reference</th>
-        <th>編號 Code</th>
-        <th>產品名稱 Product</th>
+        <th class="w-col w-col-2">圖片 Picture</th>
+        <th class="w-col w-col-2">影片 Video</th>
+        <th class="w-col w-col-2">編號 Code</th>
+        <th class="w-col w-col-2">產品名稱 Product</th>
         <th>產品敘述 Description</th>
       </tr>
     </thead>
@@ -19,7 +20,9 @@
       <% @fireworks.each do |firework| %>
         <tr>
           <td>
-            <%= link_to "#{image_tag(firework.image.url(:thumb))}".html_safe, firework.youtube_url,:class => 'fancybox-media' %></td>
+            <%= link_to "#{image_tag(firework.image.url(:thumb))}".html_safe, firework.image.url(:medium),:class => 'fancybox-media' %></td>
+          <td>
+            <%= link_to "#{youtube_thumbnail(firework.youtube_url)}".html_safe, firework.youtube_url,:class => 'fancybox-media' %></td>
           <td><%= firework.name_id %></td>
           <td><%= firework.name %></td>
           <td><%= firework.content %></td>
