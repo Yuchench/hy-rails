@@ -1,5 +1,5 @@
 <%= bootstrap_form_for([:admin,@firework], layout: :horizontal) do |f| %>
-  <%= f.text_field :name_id , :label =>'產品編號' %>
+  <%= f.number_field :code, :label => '產品序號(可排序)'  %>
   <%= f.text_field :name , :label =>'產品名稱' %>
   <%= f.select :product_type, options_for_select(Firework.product_types,f.object.product_type) , :label => '產品類型' %>
   <%= f.select :sub_type,options_for_select(Firework.product_sub_type,f.object.sub_type) ,:label => '子類',:prompt => '請選擇子類'%>

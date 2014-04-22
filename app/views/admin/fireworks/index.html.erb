@@ -16,7 +16,7 @@
   <tbody>
     <% @fireworks.each do |firework| %>
       <tr>
-        <td><%= firework.name_id %></td>
+        <td><%= firework_serial(firework) %></td>
         <td><%= firework.name %></td>
         <td>
           <%= product_type_chinese(firework.product_type) %><br>

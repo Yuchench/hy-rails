@@ -90,6 +90,6 @@ class Admin::FireworksController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def firework_params
-    params.require(:firework).permit(:name_id, :name, :product_type, :content,:image,:youtube_url,:sub_type)
+    params.require(:firework).permit(:name_id, :name, :product_type, :content,:image,:youtube_url,:sub_type,:code)
   end
 end
