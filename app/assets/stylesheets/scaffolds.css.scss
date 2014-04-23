@@ -27,7 +27,17 @@ div {
 #notice {
   color: green;
 }
+.break{
+  -ms-word-break: break-all;
+  word-break: break-all;
 
+  /* Non standard for webkit */
+  word-break: break-word;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
 .field_with_errors {
   padding: 2px;
   background-color: red;

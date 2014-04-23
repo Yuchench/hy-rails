@@ -1,4 +1,5 @@
 class Firework < ActiveRecord::Base
+  default_scope order(:code)
   scope :all_type, ->(type) { where("product_type = ?", type) }
   scope :sub_type, ->(sub_type) { where("sub_type = ?", sub_type) }
   has_attached_file :image, styles: {
@@ -30,6 +31,6 @@ class Firework < ActiveRecord::Base
   validates :youtube_url, presence: true
   validates :image, presence: true
   validates :name, presence: true
-  validates :name_id, presence: true
+  validates :code, presence: true
   validates :product_type,presence: true
 end
