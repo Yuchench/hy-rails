@@ -15,7 +15,7 @@ class Admin::FireworksController < ApplicationController
         @fireworks = Firework.all_type(@product_type)
       end
     else
-      @fireworks = Firework.search(params[:search])
+      redirect_to type_admin_fireworks_path('stage')
     end
   end
 
