@@ -17,12 +17,12 @@
     <% @fireworks.each do |firework| %>
       <tr>
         <td><%= firework_serial(firework) %></td>
-        <td><%= firework.name %></td>
+        <td><%= highlight(firework.name,@search) %></td>
         <td>
           <%= product_type_chinese(firework.product_type) %><br>
           <%= sub_type_chinese(firework.sub_type) if firework.sub_type? %>
         </td>
-        <td><div class="break"><%= firework.content %></div></td>
+        <td><div class="break"><%= highlight(firework.content,@search) %></div></td>
         <td>
           <%= link_to "#{image_tag(firework.image.url(:thumb))}".html_safe, firework.image.url(:medium),:class => 'fancybox-media' %></td>
         <td>

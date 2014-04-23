@@ -24,8 +24,8 @@
           <td>
             <%= link_to "#{youtube_thumbnail(firework.youtube_url)}".html_safe, firework.youtube_url,:class => 'fancybox-media' %></td>
           <td><%= firework_serial(firework) %></td>
-          <td><%= firework.name %></td>
-          <td><div class="break"><%= firework.content %></div></td>
+          <td><%= highlight(firework.name,@search) %></td>
+          <td><div class="break"><%= highlight(firework.content,@search) %></div></td>
         </tr>
       <% end %>
     </tbody>
