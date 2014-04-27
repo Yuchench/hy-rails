@@ -6,12 +6,12 @@
   <% end %>
   <br>
   <h4><%= sub_navs(@product_type) if @product_type == 'gadge' %></h4>
-  <table class="table">
+  <table class="table" style='table-layout : fixed'>
     <thead>
       <tr>
         <th class="w-col w-col-2">圖片 Picture</th>
         <th class="w-col w-col-2">影片 Video</th>
-        <th class="w-col w-col-2">編號 Code</th>
+        <th class="w-col w-col-1">編號 Code</th>
         <th class="w-col w-col-2">產品名稱 Product</th>
         <th>產品敘述 Description</th>
       </tr>
@@ -23,9 +23,9 @@
             <%= link_to "#{image_tag(firework.image.url(:thumb))}".html_safe, firework.image.url(:medium),:class => 'fancybox-media' %></td>
           <td>
             <%= link_to "#{youtube_thumbnail(firework.youtube_url)}".html_safe, firework.youtube_url,:class => 'fancybox-media' %></td>
-          <td><%= firework.name_id %></td>
-          <td><%= firework.name %></td>
-          <td><%= firework.content %></td>
+          <td><%= firework_serial(firework) %></td>
+          <td><%= highlight(firework.name,@search) %></td>
+          <td><div class="break"><%= highlight(firework.content,@search) %></div></td>
         </tr>
       <% end %>
     </tbody>

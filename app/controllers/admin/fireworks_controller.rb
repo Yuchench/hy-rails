@@ -14,10 +14,13 @@ class Admin::FireworksController < ApplicationController
       else
         @fireworks = Firework.all_type(@product_type)
       end
-    else
+    elsif @search
       @fireworks = Firework.search(params[:search])
+    else
+      redirect_to type_admin_fireworks_path('stage')
     end
   end
+
 
   def home
     @page_title = "產品列表"

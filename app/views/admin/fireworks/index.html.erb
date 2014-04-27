@@ -1,28 +1,28 @@
 <br>
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover" style='table-layout : fixed'>
   <thead>
     <tr>
-      <th>產品編號</th>
+      <th style="width:80px">產品編號</th>
       <th>產品名稱</th>
       <th>產品類型</th>
-      <th>產品詳細內容</th>
+      <th class="col-md-3">產品詳細內容</th>
       <th>圖片</th>
       <th>影片</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th style="width:50px"></th>
+      <th style="width:50px"></th>
+      <th style="width:50px"></th>
     </tr>
   </thead>
   <tbody>
     <% @fireworks.each do |firework| %>
       <tr>
         <td><%= firework_serial(firework) %></td>
-        <td><%= firework.name %></td>
+        <td><%= highlight(firework.name,@search) %></td>
         <td>
           <%= product_type_chinese(firework.product_type) %><br>
           <%= sub_type_chinese(firework.sub_type) if firework.sub_type? %>
         </td>
-        <td><%= firework.content %></td>
+        <td><div class="break"><%= highlight(firework.content,@search) %></div></td>
         <td>
           <%= link_to "#{image_tag(firework.image.url(:thumb))}".html_safe, firework.image.url(:medium),:class => 'fancybox-media' %></td>
         <td>

@@ -29,7 +29,7 @@ class FireworksController < ApplicationController
     @firework = Firework.new(firework_params)
 
     respond_to do |format|
-      if @firework.save
+      if @firework.save!
         format.html { redirect_to @firework, notice: 'Firework was successfully created.' }
         format.json { render action: 'show', status: :created, location: @firework }
       else
