@@ -31,3 +31,22 @@
     </tbody>
   </table>
 </div>
+<%= content_for :page_specific_javascript do %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    $("a.fancybox").fancybox();
+    $('.fancybox-media')
+        .attr('rel', 'media-gallery')
+        .fancybox({
+          openEffect : 'elastic',
+          closeEffect : 'elastic',
+          prevEffect : 'none',
+          nextEffect : 'none',
+           padding : 1,
+          arrows : false,
+          helpers : {
+            media : {}            }
+        });
+            });
+  </script>
+<% end %>
