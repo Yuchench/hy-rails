@@ -61,41 +61,43 @@
     </table>
   </div>
 </div>
-<script type="text/javascript">
-  var toggleFlag = false;
-  function toggle() {
-    toggleFlag = !toggleFlag;
-    var text;
-    if ( toggleFlag ) {
-      text = document.getElementById('chinese').innerHTML;
-      $('#toggleLink').html('English');
-    } else {
-      text = document.getElementById('english').innerHTML;
-      $('#toggleLink').html('中文');
+<%= content_for :page_specific_javascript do %>
+  <script type="text/javascript">
+    var toggleFlag = false;
+    function toggle() {
+      toggleFlag = !toggleFlag;
+      var text;
+      if ( toggleFlag ) {
+        text = document.getElementById('chinese').innerHTML;
+        $('#toggleLink').html('English');
+      } else {
+        text = document.getElementById('english').innerHTML;
+        $('#toggleLink').html('中文');
+      }
+      $('#about').html(text);
     }
-    $('#about').html(text);
-  }
-  $(document).ready(function() {
-    toggle();
-  });
-</script>
-<script  type = "text"  id = "chinese" >
-  <p>「宏益舞台特效有限公司」成立於西元1986年，是台灣目前最具有規模的舞台特效公司。在安全為先，效果至上的經營哲學引導下，宏益不斷引進及研發新穎的特效產品，並使用新科技的施放技術，故無論是國家級慶典活動、國內外大型演唱會、晚會、記者會、電視節目，甚至於校園、廟會的活動，都有宏益特效的呈現，而您的需求肯定與觀眾的讚嘆，宏益特效永遠為您盡心服務。<br>
+    $(document).ready(function() {
+      toggle();
+    });
+  </script>
+  <script  type = "text"  id = "chinese" >
+    <p>「宏益舞台特效有限公司」成立於西元1986年，是台灣目前最具有規模的舞台特效公司。在安全為先，效果至上的經營哲學引導下，宏益不斷引進及研發新穎的特效產品，並使用新科技的施放技術，故無論是國家級慶典活動、國內外大型演唱會、晚會、記者會、電視節目，甚至於校園、廟會的活動，都有宏益特效的呈現，而您的需求肯定與觀眾的讚嘆，宏益特效永遠為您盡心服務。<br>
+        <br>
+        宏益特效守則一 經營哲學-安全為先，效果至上。<br>
+        宏益特效守則二 經營理念-專業、科技、求新。<br>
+        宏益特效守則三 經營目標-為每場演出主動創造精緻的感官震撼與驚奇的特效視覺。<br>
+        <br>
+        宏益特效的視覺呈現已經和國際水準並駕齊驅，和日本TOKKO特效公司結盟並與世界頂尖煙火製造商合作，我們不僅不斷改進傳統特效的 聲光效果，更引進了電腦可與音樂同步結合的控制系統(如圖)，能準確配合特效點同步施放，滿足各式表演的需求，精準度可到達千分之 一秒，引領全國特效技術的先驅。<br>
+      </p>
+  </script>
+  <script  type = "text"  id = "english" >
+    <p>Hong-Yi was founded in 1986 and it is the largest pyrotechnics comany in Taiwan so far. Safety and Effect are Hong-Yi's philosophy and this makes Hong-Yi keep introducing and developing innovative pyro products, moreover, Hong-Yi uses the newest technology of control system. Among National celebrations, concerts, night parties, press conferences, television shows, campus events and temple fairs, Hong-Yi presents the most professional of pyrotechnics. With customers' supports and audiences' admirations, Hong-Yi will keep providing the best services.<br>
       <br>
-      宏益特效守則一 經營哲學-安全為先，效果至上。<br>
-      宏益特效守則二 經營理念-專業、科技、求新。<br>
-      宏益特效守則三 經營目標-為每場演出主動創造精緻的感官震撼與驚奇的特效視覺。<br>
+      Philosophy: Safety goes first with great effects.<br>
+      Concept: Professional, technological and innovative.<br>
+      Target: To present the most impressive sensory experiences and the most wonderful visual effects for every show.<br>
       <br>
-      宏益特效的視覺呈現已經和國際水準並駕齊驅，和日本TOKKO特效公司結盟並與世界頂尖煙火製造商合作，我們不僅不斷改進傳統特效的 聲光效果，更引進了電腦可與音樂同步結合的控制系統(如圖)，能準確配合特效點同步施放，滿足各式表演的需求，精準度可到達千分之 一秒，引領全國特效技術的先驅。<br>
+      Hong-Yi's visual presentation keeps pace with international standards. In order to keep improving pyrotechnics effects, Hong-Yi cooperates with TOKKO, a top pyrotechnics manufacturer in Japan and introduce the control system which combines the computer with audio. The control system can set off pyrotechnics synchronously and precisely to meet any kinds of performance demands, furthermore, the accuracy is 1/1000 second which makes the control system a pioneer of pyrotechnics in Taiwan.
     </p>
-</script>
-<script  type = "text"  id = "english" >
-  <p>Hong-Yi was founded in 1986 and it is the largest pyrotechnics comany in Taiwan so far. Safety and Effect are Hong-Yi's philosophy and this makes Hong-Yi keep introducing and developing innovative pyro products, moreover, Hong-Yi uses the newest technology of control system. Among National celebrations, concerts, night parties, press conferences, television shows, campus events and temple fairs, Hong-Yi presents the most professional of pyrotechnics. With customers' supports and audiences' admirations, Hong-Yi will keep providing the best services.<br>
-    <br>
-    Philosophy: Safety goes first with great effects.<br>
-    Concept: Professional, technological and innovative.<br>
-    Target: To present the most impressive sensory experiences and the most wonderful visual effects for every show.<br>
-    <br>
-    Hong-Yi's visual presentation keeps pace with international standards. In order to keep improving pyrotechnics effects, Hong-Yi cooperates with TOKKO, a top pyrotechnics manufacturer in Japan and introduce the control system which combines the computer with audio. The control system can set off pyrotechnics synchronously and precisely to meet any kinds of performance demands, furthermore, the accuracy is 1/1000 second which makes the control system a pioneer of pyrotechnics in Taiwan.
-  </p>
-</script>
+  </script>
+<% end %>
