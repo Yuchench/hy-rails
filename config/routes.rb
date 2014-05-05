@@ -2,7 +2,7 @@ Myapp::Application.routes.draw do
 
 
   if Rails.env.production?
-    devise_for :users, :controllers => { :registrations => "registrations" }
+    devise_for :users, :controllers => { :registrations => "admin/registrations" }
   else
     devise_for :users
   end
