@@ -2,15 +2,17 @@ body {
   background-color: black;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center; 
+  background-position: center;
   font-family: "Microsoft JhengHei", Arial, Helvetica, sans-serif;
   color: #888888;
   font-size: 16px;
   line-height: 20px;
 }
-body,html{
-  height: 100%; 
+
+body,html {
+  height: 100%;
 }
+
 h1 {
   margin-right: 0px;
   margin-bottom: 10px;
@@ -21,36 +23,42 @@ h1 {
   font-weight: 700;
   font-family: "Microsoft JhengHei", Arial, Helvetica, sans-serif;
 }
+
 h2 {
   margin: 10px 0px;
   font-size: 32px;
   line-height: 36px;
   font-weight: 700;
 }
+
 h3 {
   margin: 10px 0px;
   font-size: 24px;
   line-height: 30px;
   font-weight: 700;
 }
+
 h4 {
   margin: 10px 0px;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
 }
+
 h5 {
   margin: 10px 0px;
   font-size: 14px;
   line-height: 20px;
   font-weight: 700;
 }
+
 h6 {
   margin: 10px 0px;
   font-size: 12px;
   line-height: 18px;
   font-weight: 700;
 }
+
 p {
   margin-bottom: 14px;
 }
@@ -73,6 +81,7 @@ a {
   text-align: center;
   text-decoration: none;
 }
+
 .content-block {
   width: 92%;
   margin-top: 50px;
@@ -81,19 +90,20 @@ a {
   margin-bottom: 25px;
   padding-left: 25px;
 }
-.content-block-home{
+
+.content-block-home {
   width: 92%;
   margin-top: 25px;
   margin-bottom: 25px;
   padding-left: 25px;
 }
+
 .left-sidebar {
   position: static;
   padding: 50px 0px 22px;
   text-align: center;
   background-color: black;
 }
-
 
 .content-column {
   padding-top: 0px;
@@ -104,12 +114,9 @@ a {
 }
 
 .history {
-    margin-top: 15px;
-    padding: 0px 20px;
+  margin-top: 15px;
+  padding: 0px 20px;
 }
-
-
-
 
 .contact-us {
   padding-left: 0px;
@@ -117,11 +124,11 @@ a {
   text-align: left;
 }
 
-
 .logo {
   margin-bottom: 40px;
-max-width: 300px;
+  max-width: 300px;
 }
+
 .nav-link {
   display: block;
   padding-top: 21px;
@@ -138,20 +145,24 @@ max-width: 300px;
   transition: background-color 0.2s ease;
   background-color: black;
 }
+
 .nav-link:hover {
   background-color: #f8c400;
   color: black;
   opacity: 1;
   text-decoration: none;
 }
+
 .image-example {
   height: 380px;
-  background-image: url('../images/example-bg.png');
+  background-image: url("../images/example-bg.png");
 }
+
 .caption {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
 .italic-text {
   margin-top: 18px;
   margin-bottom: 17px;
@@ -159,9 +170,11 @@ max-width: 300px;
   font-style: italic;
   font-weight: 400;
 }
+
 .italic-text.footer {
   width: 90%;
 }
+
 .social-icon {
   display: inline-block;
   width: 40px;
@@ -173,18 +186,21 @@ max-width: 300px;
   border-radius: 50px;
   background-color: #ccc;
 }
+
 .social-icon:hover {
   background-color: #adadad;
 }
+
 .footer-section {
   padding-top: 25px;
   padding-bottom: 25px;
   padding-left: 25px;
   background-color: #ededed;
 }
+
 .fixed-nav {
   position: absolute;
-  width: 100%;
+  width: 33.4%;
 }
 
 .slideShow {
@@ -199,35 +215,33 @@ max-width: 300px;
   margin: 0px auto 0px auto;
 }
 
-
-
 .btn {
   width: 150px;
   padding: 0;
   background-color: #888888;
 }
 
-
-
-ul{
-      padding:0; 
+ul {
+  padding: 0;
 }
+
 ul li {
-    list-style: none;
-    padding:0; 
-    margin:0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-li.active a{
+
+li.active a {
   color: #f8c400;
   opacity: 1;
 }
 
-
 @media (max-width: 991px) {
   .image-example {
-    background-image: url('../images/example-bg.png');
+    background-image: url("../images/example-bg.png");
   }
 }
+
 @media (max-width: 767px) {
   .left-sidebar {
     padding-top: 29px;
@@ -236,15 +250,16 @@ li.active a{
     padding-top: 0px;
   }
   .image-example {
-    background-image: url('../images/example-bg.png');
+    background-image: url("../images/example-bg.png");
   }
   .fixed-nav {
     position: static;
     width: auto;
   }
 }
+
 @media (max-width: 479px) {
   .image-example {
-    background-image: url('../images/example-bg.png');
+    background-image: url("../images/example-bg.png");
   }
 }
