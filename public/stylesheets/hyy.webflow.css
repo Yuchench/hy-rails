@@ -183,8 +183,8 @@ max-width: 300px;
   background-color: #ededed;
 }
 .fixed-nav {
-  position: fixed;
-  width: 33.34%;
+  position: absolute;
+  width: 100%;
 }
 
 .slideShow {
