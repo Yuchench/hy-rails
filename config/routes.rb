@@ -30,9 +30,9 @@ Myapp::Application.routes.draw do
   end
 
   get 'about' => 'high_voltage/pages#show', id: 'about'
-  get 'home' => 'fireworks#home'
-  root to: 'high_voltage/pages#show', id: 'building'
-  #root 'fireworks#home'
+  #get 'home' => 'fireworks#home'
+  #root to: 'high_voltage/pages#show', id: 'building'
+  root 'fireworks#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
