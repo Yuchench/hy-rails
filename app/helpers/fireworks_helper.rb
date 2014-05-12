@@ -1,9 +1,9 @@
 module FireworksHelper
   def sub_type_chinese(sub_type)
-    Firework.product_sub_type.index(sub_type)
+    Firework.product_sub_type.key(sub_type)
   end
   def product_type_chinese(type)
-    chinese = Firework.product_types.index(type)
+    chinese = Firework.product_types.key(type)
     if chinese
       chinese
     else
