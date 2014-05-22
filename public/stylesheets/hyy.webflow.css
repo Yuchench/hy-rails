@@ -4,7 +4,7 @@ body {
   background-attachment: fixed;
   background-position: center;
   font-family: "Microsoft JhengHei", Arial, Helvetica, sans-serif;
-  color: #888888;
+  color: #B3B3B3;
   font-size: 16px;
   line-height: 20px;
 }
@@ -140,7 +140,7 @@ a {
   border-top: 1px solid #333;
   padding-bottom: 21px;
   border-bottom: 1px solid #333;
-  color: #a6a6a6;
+  color: #CCCCCC;
   font-size: 16px;
   font-style: normal;
   text-align: center;
