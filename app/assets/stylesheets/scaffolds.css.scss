@@ -27,17 +27,17 @@ div {
 #notice {
   color: green;
 }
-.break{
+
+.break {
   -ms-word-break: break-all;
   word-break: break-all;
-
   /* Non standard for webkit */
   word-break: break-word;
-
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
 }
+
 .field_with_errors {
   padding: 2px;
   background-color: red;
@@ -66,27 +66,32 @@ div {
     list-style: square;
   }
 }
-ul{
-      padding:0; 
+
+ul {
+  padding: 0;
 }
+
 ul li {
-    list-style: none;
-    padding:0; 
-    margin:0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-li.active a{
+
+li.active a {
   color: #f8c400;
   opacity: 1;
 }
-.carousel{
-  height:400px;
-  overflow:hidden;
+
+.carousel {
+  height: 400px;
+  overflow: hidden;
 }
 
-div.bg-img { 
-  background-image: url("https://s3.amazonaws.com/hongyi/bg.jpg") no-repeat center center fixed; 
-   background: color url("https://s3.amazonaws.com/hongyi/bg.jpg") no-repeat center center fixed; 
+div.bg-img {
+  background-image: url("https://s3.amazonaws.com/hongyi/bg.jpg") no-repeat center center fixed;
+  background: color url("https://s3.amazonaws.com/hongyi/bg.jpg") no-repeat center center fixed;
 }
+
 .breadcrumb {
-  background-color:black;
+  background-color: black;
 }
