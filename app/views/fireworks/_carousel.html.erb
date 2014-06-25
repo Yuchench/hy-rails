@@ -1,26 +1,28 @@
-<div class="slide-outter">
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <% slides.each_with_index do |slide,index| %>
-        <%= content_tag(:li,'',:data => {:target => '#carousel-example-generic',:slide_to => index},:class => index ==0 ? 'active' :'') %>
-      <% end %>
-    </ol>
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <% slides.each_with_index do |slide,index| %>
-        <%= content_tag :div, :class => index ==0 ? 'item active' :'item'  do %>
-          <%= image_tag slide.slideimage.url(:medium) %>
-          <%= content_tag(:div, slide.caption ,:class => 'carousel-caption') %>
+<span class="hidden-xs visible-sm visible-md visible-lg">
+  <div class="slide-outter">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <% slides.each_with_index do |slide,index| %>
+          <%= content_tag(:li,'',:data => {:target => '#carousel-example-generic',:slide_to => index},:class => index ==0 ? 'active' :'') %>
         <% end %>
-      <% end %>
-    </div>
-    <!-- Controls -->
-    <!--   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <% slides.each_with_index do |slide,index| %>
+          <%= content_tag :div, :class => index ==0 ? 'item active' :'item'  do %>
+            <%= image_tag slide.slideimage.url(:medium) %>
+            <%= content_tag(:div, slide.caption ,:class => 'carousel-caption') %>
+          <% end %>
+        <% end %>
+      </div>
+      <!-- Controls -->
+      <!--   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
   </a>
   <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a> -->
+    </div>
   </div>
-</div>
+</span>
