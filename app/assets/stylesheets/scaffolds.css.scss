@@ -116,6 +116,12 @@ div.bg-img {
   padding-top: 10px;
 }
 
+.carousel-inner > .item {
+  position: relative;
+  height: 380px !important;
+  overflow: hidden;
+}
+
 .allrights {
   color: white;
   padding: 0 10px;

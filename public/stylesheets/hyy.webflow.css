@@ -213,12 +213,6 @@ a {
   overflow: hidden;
 }
 
-.carousel-inner > .item {
-  position: relative;
-  height: 380px !important;
-  overflow: hidden;
-}
-
 .btn {
   width: 150px;
   padding: 0;
