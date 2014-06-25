@@ -213,7 +213,7 @@ a {
   overflow: hidden;
 }
 
-.item {
+.carousel-inner > .item {
   position: relative;
   height: 380px !important;
   overflow: hidden;
