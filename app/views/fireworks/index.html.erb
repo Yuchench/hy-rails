@@ -24,7 +24,7 @@
               <%= link_to "#{image_tag(firework.image.url(:thumb))}".html_safe, firework.image.url(:medium), data: { lightbox: "#{firework.id}" }  %></td>
             <td>
               <%= content_tag(:span, class:'video-link video-target', data: {video_id: youtube_id(firework.youtube_url)}) do %>
-                <%=youtube_thumbnail(firework.youtube_url) if youtube_id(firework.youtube_url) != 'y-FhpMilLXs3I'%>
+                <%=youtube_thumbnail(firework.youtube_url)%>
               <% end %>
             </td>
             <td><%= firework_serial(firework) %></td>
