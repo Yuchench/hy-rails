@@ -85,10 +85,6 @@ module FireworksHelper
       youtube_url[/^.*((v\/)|(embed\/)|(watch\?))\??v?=?([^\&\?]*).*/]
       youtube_id = $5
     end
-    if youtube_id.blank?
-      "y-FhpMilLXs3I"
-    else
-      "y-" + youtube_id
-    end
+  "y-" + youtube_id
   end
 end
