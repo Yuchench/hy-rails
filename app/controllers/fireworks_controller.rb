@@ -18,7 +18,7 @@ class FireworksController < ApplicationController
 
   def home
     @slides = Slide.all
-    @events = Event.afterToday
+    @events = Event.all.order('event_date DESC').limit(10)
   end
   # GET /fireworks/1
   # GET /fireworks/1.json
